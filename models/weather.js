@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        models.weather.belongsTo(models.user)
         // associations can be defined here
       }
     }

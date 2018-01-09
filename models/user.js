@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        models.user.hasMany(models.weather);
+        models.user.hasMany(models.nationalpark);
         // associations can be defined here
       }
     }

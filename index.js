@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var flash = require("connect-flash");
 var app = express();
+var process = require("process");
+var parksApi = process.env.PARKS_API;
+var weatherApi = process.env.WEATHER_API;
 
 //set up middleware
 app.set("view engine", "ejs");
@@ -17,9 +20,9 @@ app.use(express.static(__dirname + "/public/"));
 app.get("/new", function(req, res){
 	res.render("weather/new");
 })
-//set up the homepage route
+// set up the homepage route
 // app.get("/", function(req, res) {
-// 	var weatherData = "http://api.wunderground.com/api/4777b8d76e2b5feb/conditions/q/CA/San_Francisco.json"
+// 	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/conditions/q/CA/San_Francisco.json"
 // 	request(weatherData, function(error, response, body){
 // 		var weather = JSON.parse(body);
 // 		// res.render("homepage", {weather: weather});
@@ -29,13 +32,22 @@ app.get("/new", function(req, res){
 // });
 
 app.get("/", function(req, res) {
-	var weatherData = "http://api.wunderground.com/api/4777b8d76e2b5feb/forecast/q/CA/San_Francisco.json"
+	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/forecast/q/CA/San_Francisco.json"
 	request(weatherData, function(error, response, body){
 		var weather = JSON.parse(body);
-		res.render("homepage", { weather: weather });
-		// res.send(weather.forecast.txt_forecast.forecastday[2])
+		// res.render("homepage", { weather: weather });
+		res.send(weather.forecast.txt_forecast.forecastday[2])
 	});
 });
+
+// app.get("/", function(req, res) {
+// 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=ME&api_key=" + parksApi;
+// 	request(parkData, function(error, response, body){
+// 		var park = JSON.parse(body);
+// 		// res.render("/hometest", { park: park });
+// 		res.send(park)
+// 	});
+// });
 
 //controllers
 app.use("/weather", require("./controllers/weather"));
