@@ -1,0 +1,14 @@
+<h2>Your Favorite Parks</h2>
+
+<div>
+	<% if(park.length <=0){ %>
+		<p>no parks yet</p>
+	<%} else {%>
+		<% park.forEach(function(item) { %>
+			<div class="favoritepark">
+				<p class="text-center"><a href="favs/<%= item.name %>"><%=item.name%></a></p>
+		<% });%>
+
+	<% } %>
+</div>
+

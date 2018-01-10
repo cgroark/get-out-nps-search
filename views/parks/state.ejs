@@ -1,0 +1,36 @@
+<h2>map of the state</h2>
+
+ 
+<% if(park.length <=0){ %>
+		<p>No Parks in that State</p>
+	<%} else {%>
+		<% park.forEach(function(item){ %>
+			<div class="well">
+				<h3>Park Name: <%=item.name%></h3>
+				<p>Designation: <%=item.designation%></p>
+				<a href="<%=item.url%>" target="blank">Vist Park Website</a><br>
+				<p>Geo Coordinates: <%=item.latLong %></p>
+				<p>State: <%=item.states %></p>
+
+				<form method="POST" action="/favs">
+         			 <input hidden type="text" name="name" value="<%= item.name %>">
+         			 <input hidden type="text" name="designation" value="<%= item.designation %>">
+         			 <input hidden type="text" name="state" value="<%= item.states%>">
+         			 <input hidden type="text" name="Latlong" value="<%= item.latLong %>">
+         			<input hidden type="text" name="url" value="<%= item.url %>">
+          				<button class="btn btn-primary" type="submit">Add to Favorites</button>
+        		</form>
+
+			</div>
+		<%});%>
+	<%};%>
+	
+
+<div id="state-map">
+
+
+</div>
+
+<script src="js/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.MAPS_API%>&callback=initMap"></script>
+

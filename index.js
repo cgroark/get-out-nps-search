@@ -5,9 +5,10 @@ var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var flash = require("connect-flash");
 var app = express();
-var process = require("process");
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
+var mapApi = process.env.MAPS_API;
+var geocoder = require("geocoder")
 
 //set up middleware
 app.set("view engine", "ejs");
@@ -16,10 +17,11 @@ app.use(ejsLayouts);
 app.use(flash());
 app.use(express.static(__dirname + "/public/"));
 
-//route to the new search page
-app.get("/new", function(req, res){
-	res.render("weather/new");
-})
+app.get("/", function(req, res) {
+		res.render("homepage")
+	});
+
+
 // set up the homepage route
 // app.get("/", function(req, res) {
 // 	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/conditions/q/CA/San_Francisco.json"
@@ -31,26 +33,28 @@ app.get("/new", function(req, res){
 // 	});
 // });
 
-app.get("/", function(req, res) {
-	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/forecast/q/CA/San_Francisco.json"
-	request(weatherData, function(error, response, body){
-		var weather = JSON.parse(body);
-		// res.render("homepage", { weather: weather });
-		res.send(weather.forecast.txt_forecast.forecastday[2])
-	});
-});
+// app.get("/", function(req, res) {
+// 	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/forecast/q/CA/San_Francisco.json"
+// 	request(weatherData, function(error, response, body){
+// 		var weather = JSON.parse(body);
+// 		res.render("homepage", { weather: weather });
+// 		// res.send(weather.forecast.txt_forecast.forecastday[2])
+// 	});
+// });
+
 
 // app.get("/", function(req, res) {
-// 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=ME&api_key=" + parksApi;
+// 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.params.state + "&api_key=" + parksApi;
 // 	request(parkData, function(error, response, body){
 // 		var park = JSON.parse(body);
-// 		// res.render("/hometest", { park: park });
-// 		res.send(park)
+// 		res.render("homepage")
 // 	});
 // });
 
 //controllers
-app.use("/weather", require("./controllers/weather"));
+app.use("/parks", require("./controllers/parks"));
+app.use("/favs", require("./controllers/favs"));
+
 
 
 var server = app.listen(process.env.PORT || 3000);
