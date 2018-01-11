@@ -20,7 +20,6 @@ router.post("/", function(req, res){
 			request(weatherUrl, function(error, response, body){
 				var weatherData = JSON.parse(body).forecast;
 				weatherData.parkStuff = info;
-				console.log(weatherData.parkStuff);
 				res.render("parks/park", {weatherData: weatherData});
 			});
 	});
