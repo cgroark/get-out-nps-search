@@ -35,12 +35,12 @@ router.post("/signup", function(req, res, next){
 			//good job.  you nailed it without duplication
 			passport.authenticate("local", {
 				successRedirect: "/profile",
-				successFlash: "logged in with success"
+				successFlash: "Login credentials and username created"
 			})(req, res, next);
 		}
 		else {
 			//you blew it, you should login not, signup
-			req.flash("error", "Email already exists");
+			req.flash("error", "Email already exists, login below");
 			res.redirect("/auth/login");
 		}
 	}).catch(function(err){

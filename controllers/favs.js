@@ -3,11 +3,12 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var db = require("../models");
 var request = require('request');
+var isLoggedIn = require("../middleware/isLoggedIn");
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
 
 
-router.get("/", function(req, res) {
+router.get("/", isLoggedIn, function(req, res) {
     db.nationalpark.findAll().then(function(wishlist){
     	res.render("parks/wishlist", {park: wishlist});
     });
@@ -23,3 +24,4 @@ router.post("/", function(req, res) {
 
 
 module.exports = router;
+
