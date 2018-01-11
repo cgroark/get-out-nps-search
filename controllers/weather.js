@@ -22,6 +22,7 @@ router.post("/", isLoggedIn, function(req, res){
 			request(weatherUrl, function(error, response, body){
 				var weatherData = JSON.parse(body).forecast;
 				weatherData.parkStuff = info;
+				console.log(weatherData);
 				res.render("parks/park", {weatherData: weatherData});
 			});
 	});

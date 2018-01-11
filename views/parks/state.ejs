@@ -1,6 +1,5 @@
 <h2>map of the state</h2>
 
- 
 <% if(park.length <=0){ %>
 		<p>No Parks in that State</p>
 	<%} else {%>
@@ -13,24 +12,25 @@
 				<p>State: <%=item.states %></p>
 
 				<form method="POST" action="/favs">
-         			 <input hidden type="text" name="name" value="<%= item.name %>">
-         			 <input hidden type="text" name="designation" value="<%= item.designation %>">
-         			 <input hidden type="text" name="state" value="<%= item.states%>">
-         			 <input hidden type="text" name="Latlong" value="<%= item.latLong %>">
-         			<input hidden type="text" name="url" value="<%= item.url %>">
-          				<button class="btn btn-primary" type="submit">Add to Favorites</button>
+					<% if(currentUser) {%>
+						<input hidden type="text" name="userId" value="<%= currentUser.id %>">
+	         			<input hidden type="text" name="name" value="<%= item.name %>">
+	         			<input hidden type="text" name="designation" value="<%= item.designation %>">
+	         			<input hidden type="text" name="state" value="<%= item.states%>">
+	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
+	         			<input hidden type="text" name="url" value="<%= item.url %>">
+	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
+	          		<% } else { %>
+	          			<input hidden type="text" name="name" value="<%= item.name %>">
+	         			<input hidden type="text" name="designation" value="<%= item.designation %>">
+	         			<input hidden type="text" name="state" value="<%= item.states%>">
+	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
+	         			<input hidden type="text" name="url" value="<%= item.url %>">
+	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
+					<% } %>
         		</form>
-
 			</div>
 		<%});%>
 	<%};%>
-	
 
-<div id="state-map">
-
-
-</div>
-
-<script src="js/script.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.MAPS_API%>&callback=initMap"></script>
 

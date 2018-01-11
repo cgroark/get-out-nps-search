@@ -14,16 +14,18 @@ router.post("/", function(req,res){
 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.body.state + "&api_key=" + parksApi;
 	request(parkData, function(error, response, body){
 		var park = JSON.parse(body).data;
-			// for(var i=0; i<=park.length; i++){
-			// 	var what = park[i].latLong;
-			// 	if(what.length > 3){
+		console.log(park[0]);
 				res.render("parks/state", {park: park})
-			// 	}
-			// }
 	});	
 });
 
 
 
 module.exports = router;
+
+// for(var i=0; i<park.length; i++){
+// 	if(park[i].latLong !== ''){
+// 		var parkLat = 
+// 	}
+// }
 

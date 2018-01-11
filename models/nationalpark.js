@@ -7,12 +7,9 @@ module.exports = (sequelize, DataTypes) => {
     designation: DataTypes.STRING,
     url: DataTypes.STRING,
     userId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        models.nationalpark.belongsTo(models.user)// associations can be defined here
-      }
-    }
   });
+    nationalpark.associate = function(models){
+        models.nationalpark.belongsTo(models.user);// associations can be defined here
+      };
   return nationalpark;
 };

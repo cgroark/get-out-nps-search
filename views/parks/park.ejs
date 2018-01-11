@@ -1,4 +1,6 @@
-<h1>Additional Information and Forecast for: <%=weatherData.parkStuff.name%></h1>
+ <h1>Additional Information and Forecast for: <%=weatherData.parkStuff.name%></h1>
+
+
 
 <div>
 <h3>Weather for: <%=weatherData.txt_forecast.forecastday[0].title%></h3>
@@ -17,6 +19,13 @@
 <h4>Forecast: <%=weatherData.txt_forecast.forecastday[4].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[4].icon_url %>">
 </div>
 
+<div id="state-map">
+
+
+</div>
+
+<script src="js/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.MAPS_API%>&callback=initMap"></script>
 
 
 

@@ -35,14 +35,12 @@ module.exports = (sequelize, DataTypes) => {
           pendingUser.password = hash; 
         }
       }
-    },
-    classMethods: {
-      associate: function(models) {
-        models.user.hasMany(models.nationalpark);
-        // associations can be defined here
-      }
     }
   });
+      user.associate = function(models) {
+        models.user.hasMany(models.nationalpark);
+        // associations can be defined here
+  };
   user.prototype.isValidPassword = function(passwordTyped){
   return bcrypt.compareSync(passwordTyped, this.password);
 }
@@ -52,15 +50,5 @@ user.prototype.toJSON = function (){
   delete user.password;
     return user;
 }
-
-
-
-
-
-
-
-
-
-
   return user;
 };

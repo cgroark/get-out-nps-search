@@ -9,8 +9,11 @@ var weatherApi = process.env.WEATHER_API;
 
 
 router.get("/", isLoggedIn, function(req, res) {
-    db.nationalpark.findAll().then(function(wishlist){
-    	res.render("parks/wishlist", {park: wishlist});
+    db.user.findOne({
+    	where: {id: req.user.id},
+    	include: [db.nationalpark]
+    }).then(function(wishlist){
+    	res.render("parks/wishlist", {user: wishlist});
     });
 });
 
@@ -24,4 +27,5 @@ router.post("/", function(req, res) {
 
 
 module.exports = router;
+
 

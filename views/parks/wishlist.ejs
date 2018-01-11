@@ -1,10 +1,8 @@
-<h2>Your Favorite Parks</h2>
+
+<h1><%= currentUser.firstname %>'s Favorite Parks</h1>
 
 <div>
-	<% if(park.length <=0){ %>
-		<p>no parks yet</p>
-	<%} else {%>
-		<% park.forEach(function(item) { %>
+		<% user.nationalparks.forEach(function(item) { %>
 		
 			<div class="favoritepark">
 				
@@ -14,7 +12,4 @@
 					<input type="submit" value="Here" class= "btn btn-success">
 				</form>
 		<% });%>
-
-	<% } %>
 </div>
-
