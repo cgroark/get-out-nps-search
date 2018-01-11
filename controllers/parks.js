@@ -20,7 +20,7 @@ router.post("/", function(req,res){
 	});
 });
 
-
+// (data.latLong)
 
 module.exports = router;
 

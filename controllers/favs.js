@@ -13,7 +13,6 @@ router.get("/", function(req, res) {
     });
 });
 
-
 router.post("/", function(req, res) {
 	db.nationalpark.create(req.body).then(function(){
 		res.redirect("/favs")
@@ -21,11 +20,6 @@ router.post("/", function(req, res) {
 		res.send("error error!", err);
 	});
 });
-
-
-
-
-
 
 
 module.exports = router;

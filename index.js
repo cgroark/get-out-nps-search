@@ -21,36 +21,6 @@ app.get("/", function(req, res) {
 		res.render("homepage")
 	});
 
-
-// set up the homepage route
-// app.get("/", function(req, res) {
-// 	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/conditions/q/CA/San_Francisco.json"
-// 	request(weatherData, function(error, response, body){
-// 		var weather = JSON.parse(body);
-// 		// res.render("homepage", {weather: weather});
-// 		res.send(weather.current_observation.weather)
-
-// 	});
-// });
-
-// app.get("/", function(req, res) {
-// 	var weatherData = "http://api.wunderground.com/api/" + weatherApi + "/forecast/q/CA/San_Francisco.json"
-// 	request(weatherData, function(error, response, body){
-// 		var weather = JSON.parse(body);
-// 		res.render("homepage", { weather: weather });
-// 		// res.send(weather.forecast.txt_forecast.forecastday[2])
-// 	});
-// });
-
-
-// app.get("/", function(req, res) {
-// 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.params.state + "&api_key=" + parksApi;
-// 	request(parkData, function(error, response, body){
-// 		var park = JSON.parse(body);
-// 		res.render("homepage")
-// 	});
-// });
-
 //controllers
 app.use("/parks", require("./controllers/parks"));
 app.use("/favs", require("./controllers/favs"));
