@@ -8,9 +8,9 @@ var weatherApi = process.env.WEATHER_API;
 
 
 
-router.get("/state", function(req, res){
-	res.render("parks/state");
-});
+// router.get("/state", function(req, res){
+// 	res.render("parks/state");
+// });
 
 router.post("/", function(req,res){
 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.body.state + "&api_key=" + parksApi;
@@ -19,7 +19,6 @@ router.post("/", function(req,res){
 		res.render("parks/state", {park: park})
 	});
 });
-
 
 
 

@@ -5,8 +5,14 @@
 		<p>no parks yet</p>
 	<%} else {%>
 		<% park.forEach(function(item) { %>
+		
 			<div class="favoritepark">
-				<p class="text-center"><a href="favs/<%= item.name %>"><%=item.name%></a></p>
+				
+				<form method="POST" action="/weather">
+					<input type="hidden" type="text" name="name" value="<%=item.name%>">
+					<label><%= item.name %>: for more info and weather forcast click</label>
+					<input type="submit" value="Here" class= "btn btn-success">
+				</form>
 		<% });%>
 
 	<% } %>

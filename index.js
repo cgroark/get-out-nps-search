@@ -54,6 +54,8 @@ app.get("/", function(req, res) {
 //controllers
 app.use("/parks", require("./controllers/parks"));
 app.use("/favs", require("./controllers/favs"));
+app.use("/weather", require("./controllers/weather"));
+
 
 
 
