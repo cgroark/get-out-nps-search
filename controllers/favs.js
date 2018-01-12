@@ -19,13 +19,25 @@ router.get("/", isLoggedIn, function(req, res) {
 });
 
 router.post("/", function(req, res) {
-    console.log(req.body.name,"###########");
+    console.log(req.body.name);
 	db.nationalpark.create(req.body).then(function(){
 		res.redirect("/favs")
 	}).catch(function(err){
 		res.send("error error!", err);
 	});
 });
+
+//delete route
+
+router.delete("/:id", function(req, res){
+    console.log("delete route id where######", req.params.id);
+    db.nationalpark.destroy({
+        where: {id: req.params.id}
+    }).then(function(deleted){
+        console.log("delete=", deleted);
+        res.send("success");
+    });
+})
 
 
 module.exports = router;

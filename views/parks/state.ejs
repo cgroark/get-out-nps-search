@@ -1,19 +1,15 @@
-<div class="row form-group">
-	<div class="col-md-12"><h2>National Parks</h2></div>
+<div>
+	<div class="allparks_header"><h2>Found the following National Parks</h2></div>
 </div>
-<div class="row form-group">
-	<div class="col-md-12">
+<div id="park_display" class="row form-group">
+	<div class="col-md-11">
 <% if(park.length <=0){ %>
 		<p>No Parks in that State</p>
 	<%} else {%>
 		<% park.forEach(function(item){ %>
-			<div class="well">
-				<h3><%=item.fullName%></h3>
-				<p>Overview: <%=item.description %></p>
-				<a href="<%=item.url%>" target="blank">Vist Park Website</a><br>
-
-
-
+			<div class="park_each">
+				<h3 id="header_allparks"><%=item.fullName%></h3>
+				<p id="park_text">Overview: <%=item.description %></p>
 				<form method="POST" action="/favs">
 					<% if(currentUser) {%>
 						<input hidden type="text" name="userId" value="<%= currentUser.id %>">
@@ -25,7 +21,7 @@
 	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
 	         			<input hidden type="text" name="description" value="<%= item.description %>">
 	         			
-	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
+	          			<button id="save_button" type="submit">Add to Favorites</button>
 	          		<% } else { %>
 	          			<input hidden type="text" name="name" value="<%= item.name %>">
 	         			<input hidden type="text" name="designation" value="<%= item.designation %>">
@@ -34,10 +30,10 @@
 	         			<input hidden type="text" name="url" value="<%= item.url %>">
 	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
 	         			<input hidden type="text" name="description" value="<%= item.description %>">
-	         		
-	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
+	          			<button id="save_button" type="submit">Add to Favorites</button>
 					<% } %>
         		</form>
+        		<a id="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a><br>
 			</div>
 		<%});%>
 	<%};%>

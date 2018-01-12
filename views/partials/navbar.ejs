@@ -8,15 +8,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<div><a class="navbar-brand" href="/"><img id="logo" style="float:left" src="images/mountain.png">Home</a></div>
+			<a  href="/"><img id="logo" alt="icon" src="images/mountain.png"></a>
 		</div>
+
+        <div class="navbar-collapse collapse" id="containerNavbar">
 
 		<!-- define the links -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<% if(!currentUser) {%>
 				<li>
-					<a href="/auth/login">Sign In</a>
+					<a href="/auth/login">Login</a>
 				</li>
 				<li> 
 					<a href="/auth/signup">Sign Up</a>

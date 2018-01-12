@@ -1,20 +1,141 @@
-#state-map{
+
+/*weather page
+*/#state-map{
 	height: 400px;
 }
 
-#logo {
-	height: 50px;
+/*navbar
+*/#logo {
+	height: 60px;
 	width: auto;
 }
 
-#search_button{
+.navbar{
+	background-color: rgba(50,50,50,.3);
 }
 
+/*headers
+*/
+.header{
+	font-family: 'Poiret One', cursive;
+	font-size: 120px;
+	font-weight: 800;
+}
+
+.header2{
+	font-family: 'Poiret One', cursive;
+	font-size: 86px;
+	font-weight: 800;
+}
+
+.header3{
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	font-weight: 800;
+	text-transform: capitalize;
+}
+
+.header4{
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+/*homepage
+*/#search_button{
+	width: 150px;
+}
 #state_search{
 	width: 250px;
-	background-color: rgba(255,255,255,1)
 }
 
+.park_each{
+	background-color: rgba(50,50,50,.4);
+	padding: 30px 18px;
+	margin-bottom: 10px;
+ }
+
+ .park_each:hover{
+	background-color: rgba(50,50,50,.7);
+ }
+
+/*parksAllpage
+*/
+
+#park_display{
+	height: 600px;
+	overflow: scroll;
+}
+
+.allparks_header{
+	font-family: 'Raleway', sans-serif;
+	font-size: 170px;
+	font-weight: 800;
+	color: rgb(50,50,50);
+
+}
+
+#header_allparks{
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+	color: rgb(195,195,195);
+}
+
+#park_text{
+	font-family: 'Raleway', sans-serif;
+	color: rgb(10,10,10);
+	font-size: 17px;
+}
+
+#park_url{
+	font-family: 'Raleway', sans-serif;
+	color: rgb(247, 147, 42);
+	font-size: 14px;
+	margin-left: 7px;
+	text-decoration: underline;
+}
+
+#save_button{
+	color: rgb(247, 147, 42);
+	margin-bottom: 15px;
+	font-size: 18px;
+	background-color: inherit;
+	border: none;
+}
+
+/*layout
+*/
 .background{
-	background-image: url("/images/background1.jpg");
+	height: 800px;
+	background-image: url("/images/background4.jpg");
+	background-size: cover;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+footer {
+	text-transform: uppercase;
+	background: rgb(0,0,0);
+	padding-top: 5px;
+	color: white;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+.copyright {
+	font-family: "Raleway", sans-serif;
+	float: left;
+}
+
+.message {
+	font-family: "Raleway", sans-serif;
+	float: right;
 }

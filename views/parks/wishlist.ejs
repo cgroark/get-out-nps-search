@@ -1,16 +1,20 @@
 <div class="text-center row form-group">
-	<div class="col-md-12"><h1><%= currentUser.firstname %>'s saved parks</h1></div>
+	<div class="header3 col-md-12"><h1><%= currentUser.firstname %>'s Saved Parks</h1></div>
 <div class="text-center row form-group">
 	<div class="col-md-12">
 		<% user.nationalparks.forEach(function(item) { %>
 		
-			<div class="favoritepark">
+			<div class="park_each">
 				
 				<form method="POST" action="/weather">
 					<input type="hidden" type="text" name="name" value="<%=item.name%>">
 					<label><%= item.name %>: for more info and weather forcast click</label>
 					<input type="submit" value="Here" class= "btn btn-success">
 				</form>
+
+				<div>
+				<a href="/favs/<%= item.id %>" class="btn btn-danger delete-link">Unfavorite</a>
+				</div>
 		<% });%>
 	</div>
 </div>
