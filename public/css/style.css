@@ -2,3 +2,19 @@
 	height: 400px;
 }
 
+#logo {
+	height: 50px;
+	width: auto;
+}
+
+#search_button{
+}
+
+#state_search{
+	width: 250px;
+	background-color: rgba(255,255,255,1)
+}
+
+.background{
+	background-image: url("/images/background1.jpg");
+}

@@ -1,9 +1,10 @@
+<div class="background">
 <div class="text-center row form-group">
-	<div class="col-md-12"><h1>Search for National Parks</h1></div>
+	<div class="col-md-12"><h1>Where to?</h1><br><h3>Your National Park Trip Planner</h3></div>
 </div>
 		<form method="POST" action="/parks">
 			<div class="text-center row form-group">
-					<div class="col-md-12"><select name="state" id="state">
+					<div class="col-md-12"><select id="state_search"  name="state" id="state">
 						  <option value="" selected="selected">Select a State</option>
 						  <option value="AL">Alabama</option>
 						  <option value="AK">Alaska</option>
@@ -59,10 +60,10 @@
 					</select></div>
 			</div>
 			<div class="text-center row form-group">
-				<div class="col-md-12"><input type="submit" value="Get Results" class="btn btn-success"></div>
+				<div class="col-md-12"><input id="search_button" type="submit" value="Search" class="btn btn-primary"></div>
 			</div>
 		</form>
-
+</div>
 
 
 
