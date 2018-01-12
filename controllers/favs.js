@@ -13,11 +13,13 @@ router.get("/", isLoggedIn, function(req, res) {
     	where: {id: req.user.id},
     	include: [db.nationalpark]
     }).then(function(wishlist){
+        console.log(wishlist);
     	res.render("parks/wishlist", {user: wishlist});
     });
 });
 
 router.post("/", function(req, res) {
+    console.log(req.body.name,"###########");
 	db.nationalpark.create(req.body).then(function(){
 		res.redirect("/favs")
 	}).catch(function(err){
@@ -27,5 +29,14 @@ router.post("/", function(req, res) {
 
 
 module.exports = router;
+
+ // name: req.body.name,
+ //        state: req.body.state,
+ //        Latlong: req.body.latLong,
+ //        designation: req.body.designation,
+ //        url: req.body.url,
+ //        userId: req.body.userId,
+ //        description: req.body.description,
+ //        weatherInfo: req.body.weatherInfo
 
 

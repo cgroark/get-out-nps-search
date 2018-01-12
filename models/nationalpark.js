@@ -6,7 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     Latlong: DataTypes.STRING,
     designation: DataTypes.STRING,
     url: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    description: DataTypes.TEXT,
+    weatherInfo: DataTypes.TEXT
   });
     nationalpark.associate = function(models){
         models.nationalpark.belongsTo(models.user);// associations can be defined here

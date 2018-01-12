@@ -9,7 +9,10 @@
 				<p>Designation: <%=item.designation%></p>
 				<a href="<%=item.url%>" target="blank">Vist Park Website</a><br>
 				<p>Geo Coordinates: <%=item.latLong %></p>
-				<p>State: <%=item.states %></p>
+				<p>Overview: <%=item.description %></p>
+				<p>Weather: <%=item.weatherInfo %></p>
+
+
 
 				<form method="POST" action="/favs">
 					<% if(currentUser) {%>
@@ -19,6 +22,9 @@
 	         			<input hidden type="text" name="state" value="<%= item.states%>">
 	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
 	         			<input hidden type="text" name="url" value="<%= item.url %>">
+	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
+	         			<input hidden type="text" name="description" value="<%= item.description %>">
+	         			
 	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
 	          		<% } else { %>
 	          			<input hidden type="text" name="name" value="<%= item.name %>">
@@ -26,6 +32,9 @@
 	         			<input hidden type="text" name="state" value="<%= item.states%>">
 	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
 	         			<input hidden type="text" name="url" value="<%= item.url %>">
+	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
+	         			<input hidden type="text" name="description" value="<%= item.description %>">
+	         		
 	          			<button class="btn btn-primary" type="submit">Add to Favorites</button>
 					<% } %>
         		</form>

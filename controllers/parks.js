@@ -13,9 +13,15 @@ var weatherApi = process.env.WEATHER_API;
 router.post("/", function(req,res){
 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.body.state + "&api_key=" + parksApi;
 	request(parkData, function(error, response, body){
-		var park = JSON.parse(body).data;
+		var oldPark = JSON.parse(body).data;
+		var park = [];
+		for(var i=0; i<oldPark.length; i++){
+			if(oldPark[i].latLong !== ''){
+				park.push(oldPark[i]);
+			}
+		}
 		console.log(park[0]);
-				res.render("parks/state", {park: park})
+		res.render("parks/state", {park: park})
 	});	
 });
 
@@ -23,9 +29,5 @@ router.post("/", function(req,res){
 
 module.exports = router;
 
-// for(var i=0; i<park.length; i++){
-// 	if(park[i].latLong !== ''){
-// 		var parkLat = 
-// 	}
-// }
+
 
