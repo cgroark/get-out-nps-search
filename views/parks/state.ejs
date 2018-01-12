@@ -1,16 +1,16 @@
-<h2>map of the state</h2>
-
+<div class="row form-group">
+	<div class="col-md-12"><h2>National Parks</h2></div>
+</div>
+<div class="row form-group">
+	<div class="col-md-12">
 <% if(park.length <=0){ %>
 		<p>No Parks in that State</p>
 	<%} else {%>
 		<% park.forEach(function(item){ %>
 			<div class="well">
-				<h3>Park Name: <%=item.name%></h3>
-				<p>Designation: <%=item.designation%></p>
-				<a href="<%=item.url%>" target="blank">Vist Park Website</a><br>
-				<p>Geo Coordinates: <%=item.latLong %></p>
+				<h3><%=item.fullName%></h3>
 				<p>Overview: <%=item.description %></p>
-				<p>Weather: <%=item.weatherInfo %></p>
+				<a href="<%=item.url%>" target="blank">Vist Park Website</a><br>
 
 
 

@@ -1,7 +1,7 @@
-
-<h1><%= currentUser.firstname %>'s Favorite Parks</h1>
-
-<div>
+<div class="text-center row form-group">
+	<div class="col-md-12"><h1><%= currentUser.firstname %>'s saved parks</h1></div>
+<div class="text-center row form-group">
+	<div class="col-md-12">
 		<% user.nationalparks.forEach(function(item) { %>
 		
 			<div class="favoritepark">
@@ -12,4 +12,5 @@
 					<input type="submit" value="Here" class= "btn btn-success">
 				</form>
 		<% });%>
+	</div>
 </div>
