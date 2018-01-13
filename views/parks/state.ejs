@@ -1,14 +1,14 @@
 <div>
 	<div class="allparks_header"><h2>Found the following National Parks</h2></div>
 </div>
-<div id="park_display" class="row form-group">
+<div class="park_display" class="row form-group">
 	<div class="col-md-11">
 <% if(park.length <=0){ %>
 		<p>No Parks in that State</p>
 	<%} else {%>
 		<% park.forEach(function(item){ %>
 			<div class="park_each">
-				<h3 id="header_allparks"><%=item.fullName%></h3>
+				<h3 class="header_allparks"><%=item.fullName%></h3>
 				<p id="park_text">Overview: <%=item.description %></p>
 				<form method="POST" action="/favs">
 					<% if(currentUser) {%>

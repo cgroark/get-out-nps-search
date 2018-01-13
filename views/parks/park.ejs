@@ -1,43 +1,58 @@
+
+<h1><%=weatherData.parkStuff.name%></h1>
+
 <div class="row form-group">
-	<div class="col-md-12"><h1>Additional Information and Forecast for: <%=weatherData.parkStuff.name%></h1>
+	<div class="header2 col-md-12">
 	</div>
 </div>
+
 <div class="row form-group">
-	<div class="col-md-6"><h3>Park Overview:</h3><br><p><%=weatherData.parkStuff.description%></p></div>
-	<div class="col-md-6"><h3>Typical weather:</h3><br><p><%=weatherData.parkStuff.weatherInfo%></p></div>
+	<div class="moreinfo col-md-1"></div>
+
+	<div class="moreinfo col-md-5">
+		<h3 style="color:rgb(247, 147, 42)">Overview</h3>
+		<p><%=weatherData.parkStuff.description%></p>
+		<h3 style="color:rgb(247, 147, 42)">Typical Weather</h3>
+		<p><%=weatherData.parkStuff.weatherInfo%></p>
+	</div>
+	<div class="moreinfo col-md-5">
+		<h3 style="color:rgb(247, 147, 42)">Location</h3>
+		<div id="state-map"></div>
+	</div>
+	<div class="moreinfo col-md-1"></div>
 </div>
-<div class="row form-group">
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[0].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[0].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[0].icon_url %>"></div>
-	
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[1].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[1].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[1].icon_url %>"></div>
+<h2 style="color:rgb(247, 147, 42)">Weather Forecast</h2>
+<div class="weather_data">
 
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[2].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[2].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[2].icon_url %>"></div>
-
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[3].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[3].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[3].icon_url %>"></div>
+	<div class="weather_row row form-group">
+		<% for(var i=0; i<3; i++){ %>
+			<div class="weather_cell col-md-4">
+				<h4><%=weatherData.txt_forecast.forecastday[i].title%></h3>
+				<p class="weather_text"><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
+				<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
+			</div>
+		<%}%>
+	</div>
+	<div class="weather_row row form-group">
+		<% for(var i=3; i<6; i++){ %>
+			<div class="weather_cell col-md-4">
+				<h4><%=weatherData.txt_forecast.forecastday[i].title%></h3>
+				<p class="weather_text"><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
+				<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
+			</div>
+		<%}%>
+	</div>
+	<div class="weather_row row form-group">
+		<% for(var i=6; i<9; i++){ %>
+			<div class="weather_cell col-md-4">
+				<h4><%=weatherData.txt_forecast.forecastday[i].title%></h3>
+				<p><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
+				<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
+			</div>
+		<%}%>
+	</div>
 </div>
-<div class="row form-group">
 
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[4].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[4].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[4].icon_url %>"></div>
-
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[5].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[5].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[5].icon_url %>"></div>
-
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[6].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[6].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[6].icon_url %>"></div>
-	<div class="col-md-3"><h3>Weather for: <%=weatherData.txt_forecast.forecastday[7].title%></h3>
-	<h4>Forecast: <%=weatherData.txt_forecast.forecastday[7].fcttext%></h4><span><img src="<%= weatherData.txt_forecast.forecastday[7].icon_url %>"></div>
-
-</div>
-
-<div id="state-map">
-
-
-</div>
 
 <script type="text/javascript"> var dataObject = <%-JSON.stringify(weatherData)%></script>
 <script type="text/javascript" src="js/script.js"></script>

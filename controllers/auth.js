@@ -34,7 +34,7 @@ router.post("/signup", function(req, res, next){
 		if(wasCreated){
 			//good job.  you nailed it without duplication
 			passport.authenticate("local", {
-				successRedirect: "/profile",
+				successRedirect: "/",
 				successFlash: "Login credentials and username created"
 			})(req, res, next);
 		}

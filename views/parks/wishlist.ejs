@@ -1,20 +1,19 @@
 <div class="text-center row form-group">
-	<div class="header3 col-md-12"><h1><%= currentUser.firstname %>'s Saved Parks</h1></div>
-<div class="text-center row form-group">
-	<div class="col-md-12">
-		<% user.nationalparks.forEach(function(item) { %>
-		
+	<div class="header3 col-md-12"><h1><%= currentUser.firstname %>'s Saved Parks</h1>
+	</div>
+	<h3 class="header4">Click park name to see weather forecast and additional information
+<div class="park_display text-center row form-group">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<% user.nationalparks.forEach(function(item) { %>		
 			<div class="park_each">
-				
-				<form method="POST" action="/weather">
-					<input type="hidden" type="text" name="name" value="<%=item.name%>">
-					<label><%= item.name %>: for more info and weather forcast click</label>
-					<input type="submit" value="Here" class= "btn btn-success">
-				</form>
-
-				<div>
-				<a href="/favs/<%= item.id %>" class="btn btn-danger delete-link">Unfavorite</a>
-				</div>
+					<form method="POST" action="/weather">
+						<input type="hidden" type="text" name="name" value="<%=item.name%>">
+						<input type="submit" value="<%= item.name %> (<%=item.state%>)" id="weather_button">
+					</form>
+					<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+			</div>
 		<% });%>
 	</div>
+	<div class="col-md-2"></div>
 </div>

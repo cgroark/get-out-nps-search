@@ -1,11 +1,8 @@
 
-/*weather page
-*/#state-map{
-	height: 400px;
-}
-
 /*navbar
-*/#logo {
+*/
+
+#logo {
 	height: 60px;
 	width: auto;
 }
@@ -16,37 +13,53 @@
 
 /*headers
 */
-.header{
-	font-family: 'Poiret One', cursive;
-	font-size: 120px;
-	font-weight: 800;
-}
 
-.header2{
+h1{
 	font-family: 'Poiret One', cursive;
 	font-size: 86px;
 	font-weight: 800;
+	text-transform: capitalize;
+	text-align: center;
 }
 
-.header3{
-	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
+h2{
+	font-family: 'Poiret One', cursive;
+	font-size: 54px;
 	font-weight: 800;
 	text-transform: capitalize;
+	text-align: center;
 }
 
-.header4{
+h3{
 	font-family: 'Raleway', sans-serif;
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: 800;
+	color: rgb(50,50,50);
+	text-align: center;
+}
+
+h4{
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	font-weight: 800;
+	color: rgb(200,200,200);
+	text-align: center;
+}
+
+p{
+	color:black;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
 }
 
 /*homepage
-*/#search_button{
-	width: 150px;
+*/
+#search_button{
+	width: 120px;
 }
 #state_search{
 	width: 250px;
+	height: 35px;
 }
 
 .park_each{
@@ -62,7 +75,7 @@
 /*parksAllpage
 */
 
-#park_display{
+.park_display{
 	height: 600px;
 	overflow: scroll;
 }
@@ -75,7 +88,7 @@
 
 }
 
-#header_allparks{
+.header_allparks{
 	font-family: 'Raleway', sans-serif;
 	font-size: 28px;
 	font-weight: 800;
@@ -104,10 +117,63 @@
 	border: none;
 }
 
+/*favorites
+*/
+
+#weather_button{
+	color: rgb(195,195,195);	
+	margin-bottom: 15px;
+	font-size: 26px;
+	background-color: inherit;
+	border: none;
+}
+
+#delete_button{
+	color: rgb(247, 147, 42);
+	margin-bottom: 15px;
+	font-size: 18px;
+	background-color: transparent;
+	border: none;
+}
+
+/*weather
+*/
+
+.moreinfo{
+}
+
+.weather_row{
+	background-color: rgba(150,150,150,.15);
+}
+.weather_row:hover{
+	background-color: rgba(150,150,150,.45);
+}
+.weather_cell{
+	text-align: center;
+}
+
+
+.weather_image{
+	height: 45px;
+	margin: auto;
+	display: block;
+}
+
+#state-map{
+	height: 300px;
+}
+/*
+.weather_data{
+	height: 350px;
+	overflow: scroll;
+
+}*/
+
+
 /*layout
 */
 .background{
-	height: 800px;
+	height: 1600px;
 	background-image: url("/images/background4.jpg");
 	background-size: cover;
 }
