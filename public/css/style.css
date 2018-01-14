@@ -32,7 +32,7 @@ h2{
 
 h3{
 	font-family: 'Raleway', sans-serif;
-	font-size: 28px;
+	font-size: 30px;
 	font-weight: 800;
 	color: rgb(50,50,50);
 	text-align: center;
@@ -75,6 +75,10 @@ p{
 /*parksAllpage
 */
 
+#state_all_map{
+	height: 100px;
+}
+
 .park_display{
 	height: 600px;
 	overflow: scroll;
@@ -105,22 +109,42 @@ p{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
 	font-size: 14px;
-	margin-left: 7px;
-	text-decoration: underline;
 }
 
 #save_button{
+	font-family: 'Raleway', sans-serif;
+
+	color: rgb(247, 147, 42);
+	margin-bottom: 15px;
+	font-size: 22px;
+	background-color: inherit;
+	border: none;
+	margin: auto;
+	display: block;
+}
+
+.auth_submit{
+	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
 	margin-bottom: 15px;
 	font-size: 18px;
 	background-color: inherit;
 	border: none;
+	margin: auto;
+	display: block;
 }
 
+.auth_format{
+	font-family: 'Raleway', sans-serif;
+	background-color: rgba(50,50,50,.4);
+	padding: 15px 15px;
+	color: rgb(195,195,195);	
+}
 /*favorites
 */
 
 #weather_button{
+	font-family: 'Raleway', sans-serif;
 	color: rgb(195,195,195);	
 	margin-bottom: 15px;
 	font-size: 26px;

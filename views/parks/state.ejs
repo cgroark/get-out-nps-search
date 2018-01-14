@@ -1,41 +1,45 @@
 <div>
-	<div class="allparks_header"><h2>Found the following National Parks</h2></div>
+	<div><h2>Found the following National Parks</h2></div>
 </div>
 <div class="park_display" class="row form-group">
-	<div class="col-md-11">
-<% if(park.length <=0){ %>
-		<p>No Parks in that State</p>
-	<%} else {%>
-		<% park.forEach(function(item){ %>
-			<div class="park_each">
-				<h3 class="header_allparks"><%=item.fullName%></h3>
-				<p id="park_text">Overview: <%=item.description %></p>
-				<form method="POST" action="/favs">
-					<% if(currentUser) {%>
-						<input hidden type="text" name="userId" value="<%= currentUser.id %>">
-	         			<input hidden type="text" name="name" value="<%= item.name %>">
-	         			<input hidden type="text" name="designation" value="<%= item.designation %>">
-	         			<input hidden type="text" name="state" value="<%= item.states%>">
-	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
-	         			<input hidden type="text" name="url" value="<%= item.url %>">
-	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
-	         			<input hidden type="text" name="description" value="<%= item.description %>">
-	         			
-	          			<button id="save_button" type="submit">Add to Favorites</button>
-	          		<% } else { %>
-	          			<input hidden type="text" name="name" value="<%= item.name %>">
-	         			<input hidden type="text" name="designation" value="<%= item.designation %>">
-	         			<input hidden type="text" name="state" value="<%= item.states%>">
-	         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
-	         			<input hidden type="text" name="url" value="<%= item.url %>">
-	         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
-	         			<input hidden type="text" name="description" value="<%= item.description %>">
-	          			<button id="save_button" type="submit">Add to Favorites</button>
-					<% } %>
-        		</form>
-        		<a id="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a><br>
-			</div>
-		<%});%>
-	<%};%>
+	<div class="col-md-12">
+		<% if(park.length <=0){ %>
+				<p>No Parks in that State</p>
+			<%} else {%>
+				<% park.forEach(function(item){ %>
+					<div class="park_each">
+						<h3 style="color: rgb(190,190,190)"><%=item.fullName%></h3>
+						<p id="park_text"><%=item.description %><a id="park_url" href="<%=item.url%>" target="blank">  Vist Park Website</a></p>
+						<form method="POST" action="/favs">
+							<% if(currentUser) {%>
+								<input hidden type="text" name="userId" value="<%= currentUser.id %>">
+			         			<input hidden type="text" name="name" value="<%= item.name %>">
+			         			<input hidden type="text" name="designation" value="<%= item.designation %>">
+			         			<input hidden type="text" name="state" value="<%= item.states%>">
+			         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
+			         			<input hidden type="text" name="url" value="<%= item.url %>">
+			         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
+			         			<input hidden type="text" name="description" value="<%= item.description %>">
+			          			<button id="save_button" type="submit">Add to Favorites</button>
+			          		<% } else { %>
+			          			<input hidden type="text" name="name" value="<%= item.name %>">
+			         			<input hidden type="text" name="designation" value="<%= item.designation %>">
+			         			<input hidden type="text" name="state" value="<%= item.states%>">
+			         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
+			         			<input hidden type="text" name="url" value="<%= item.url %>">
+			         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
+			         			<input hidden type="text" name="description" value="<%= item.description %>">
+			          			<button id="save_button" type="submit">Add to Favorites</button>
+							<% } %>
+		        		</form>
+					</div>
+				<%});%>
+			<%};%>
+	</div>
+</div>
 
+
+<script type="text/javascript"> var latLongData = <%-JSON.stringify(park)%></script>
+<script type="text/javascript" src="js/script_state.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.MAPS_API%>&callback=initMap"></script>
 
