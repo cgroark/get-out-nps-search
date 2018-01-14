@@ -11,7 +11,8 @@ var weatherApi = process.env.WEATHER_API;
 // });
 
 router.post("/", function(req,res){
-	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + req.body.state + "&api_key=" + parksApi;
+	var state = req.body.state;
+	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + state + "&api_key=" + parksApi;
 	request(parkData, function(error, response, body){
 		var oldPark = JSON.parse(body).data;
 		var park = [];
@@ -20,7 +21,6 @@ router.post("/", function(req,res){
 				park.push(oldPark[i]);
 			}
 		}
-		console.log(park[0]);
 		res.render("parks/state", {park: park})
 	});	
 });

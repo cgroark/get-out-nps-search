@@ -3,8 +3,16 @@
 */
 
 #logo {
-	height: 60px;
+	height: 55px;
+	position: relative;
+	top: -18px;
 	width: auto;
+}
+
+#navbar_text{
+	color: rgb(50,50,50);
+	font-family: 'Raleway', sans-serif;
+
 }
 
 .navbar{
@@ -21,7 +29,6 @@ h1{
 	text-transform: capitalize;
 	text-align: center;
 }
-
 h2{
 	font-family: 'Poiret One', cursive;
 	font-size: 54px;
@@ -29,15 +36,14 @@ h2{
 	text-transform: capitalize;
 	text-align: center;
 }
-
 h3{
 	font-family: 'Raleway', sans-serif;
 	font-size: 30px;
 	font-weight: 800;
 	color: rgb(50,50,50);
+	text-transform: capitalize;
 	text-align: center;
 }
-
 h4{
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
@@ -46,6 +52,14 @@ h4{
 	text-align: center;
 }
 
+h5{
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-weight: 800;
+	color: rgb(200,200,200);
+	text-align: center;
+	margin-top: -8px;
+}
 p{
 	color:black;
 	font-family: 'Raleway', sans-serif;
@@ -61,26 +75,19 @@ p{
 	width: 250px;
 	height: 35px;
 }
-
 .park_each{
 	background-color: rgba(50,50,50,.4);
 	padding: 30px 18px;
 	margin-bottom: 10px;
  }
-
  .park_each:hover{
 	background-color: rgba(50,50,50,.7);
  }
 
 /*parksAllpage
 */
-
-#state_all_map{
-	height: 100px;
-}
-
 .park_display{
-	height: 600px;
+	height: 800px;
 	overflow: scroll;
 }
 
@@ -89,7 +96,6 @@ p{
 	font-size: 170px;
 	font-weight: 800;
 	color: rgb(50,50,50);
-
 }
 
 .header_allparks{
@@ -98,22 +104,18 @@ p{
 	font-weight: 800;
 	color: rgb(195,195,195);
 }
-
 #park_text{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(10,10,10);
 	font-size: 17px;
 }
-
 #park_url{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
 	font-size: 14px;
 }
-
 #save_button{
 	font-family: 'Raleway', sans-serif;
-
 	color: rgb(247, 147, 42);
 	margin-bottom: 15px;
 	font-size: 22px;
@@ -122,7 +124,6 @@ p{
 	margin: auto;
 	display: block;
 }
-
 .auth_submit{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
@@ -133,7 +134,6 @@ p{
 	margin: auto;
 	display: block;
 }
-
 .auth_format{
 	font-family: 'Raleway', sans-serif;
 	background-color: rgba(50,50,50,.4);
@@ -151,7 +151,6 @@ p{
 	background-color: inherit;
 	border: none;
 }
-
 #delete_button{
 	color: rgb(247, 147, 42);
 	margin-bottom: 15px;
@@ -159,13 +158,13 @@ p{
 	background-color: transparent;
 	border: none;
 }
-
 /*weather
 */
 
-.moreinfo{
-}
+.moreinfo:hover{
+	background-color: rgba(150,150,150,.45);
 
+}
 .weather_row{
 	background-color: rgba(150,150,150,.15);
 }
@@ -175,14 +174,11 @@ p{
 .weather_cell{
 	text-align: center;
 }
-
-
 .weather_image{
 	height: 45px;
 	margin: auto;
 	display: block;
 }
-
 #state-map{
 	height: 300px;
 }
@@ -197,7 +193,7 @@ p{
 /*layout
 */
 .background{
-	height: 1600px;
+	height: 1300px;
 	background-image: url("/images/background4.jpg");
 	background-size: cover;
 }
@@ -211,21 +207,34 @@ p{
 	font-size: 0;
 }
 
+.clearfix:after {
+visibility: hidden;
+display: block;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+
 footer {
 	text-transform: uppercase;
-	background: rgb(0,0,0);
-	padding-top: 5px;
-	color: white;
+	padding: 5px 20px;
+	background-color: rgba(30,30,30,.4);
 	font-size: 14px;
-	letter-spacing: .08em;
-	font-weight: 500;
+	letter-spacing: .09em;
+	font-weight: 900;
 }
 .copyright {
-	font-family: "Raleway", sans-serif;
+	font-family: 'Poiret One', cursive;
 	float: left;
 }
 
 .message {
-	font-family: "Raleway", sans-serif;
+	font-family: 'Poiret One', cursive;
 	float: right;
+}
+
+.name {
+	color: #F15B31;
+	font-weight: 1000;
 }

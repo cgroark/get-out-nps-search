@@ -1,4 +1,3 @@
-console.log("hello from routing");
 
 $(".delete-link").click(function(e){
 	e.preventDefault();

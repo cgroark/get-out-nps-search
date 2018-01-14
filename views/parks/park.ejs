@@ -1,5 +1,5 @@
 
-<h1><%=weatherData.parkStuff.name%></h1>
+<h2><%=weatherData.parkStuff.name%></h2>
 
 <div class="row form-group">
 	<div class="header2 col-md-12">
@@ -7,19 +7,18 @@
 </div>
 
 <div class="row form-group">
-	<div class="moreinfo col-md-1"></div>
-
+	<div class="col-md-1"></div>
 	<div class="moreinfo col-md-5">
 		<h3 style="color:rgb(247, 147, 42)">Overview</h3>
 		<p><%=weatherData.parkStuff.description%></p>
 		<h3 style="color:rgb(247, 147, 42)">Typical Weather</h3>
 		<p><%=weatherData.parkStuff.weatherInfo%></p>
 	</div>
-	<div class="moreinfo col-md-5">
+	<div class="col-md-5">
 		<h3 style="color:rgb(247, 147, 42)">Location</h3>
 		<div id="state-map"></div>
 	</div>
-	<div class="moreinfo col-md-1"></div>
+	<div class="col-md-1"></div>
 </div>
 <h2 style="color:rgb(247, 147, 42)">Weather Forecast</h2>
 <div class="weather_data">
