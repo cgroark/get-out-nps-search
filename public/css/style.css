@@ -91,18 +91,8 @@ p{
 	overflow: scroll;
 }
 
-.allparks_header{
-	font-family: 'Raleway', sans-serif;
-	font-size: 170px;
-	font-weight: 800;
-	color: rgb(50,50,50);
-}
-
-.header_allparks{
-	font-family: 'Raleway', sans-serif;
-	font-size: 28px;
-	font-weight: 800;
-	color: rgb(195,195,195);
+.favs_link:hover{
+	text-decoration: underline;
 }
 #park_text{
 	font-family: 'Raleway', sans-serif;
@@ -113,6 +103,17 @@ p{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
 	font-size: 14px;
+}
+#save_button:hover{
+	font-family: 'Raleway', sans-serif;
+	color: rgb(247, 147, 42);
+	margin-bottom: 15px;
+	font-size: 22px;
+	background-color: inherit;
+	border: none;
+	margin: auto;
+	display: block;
+	text-decoration: underline;
 }
 #save_button{
 	font-family: 'Raleway', sans-serif;

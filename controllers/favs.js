@@ -13,7 +13,6 @@ router.get("/", isLoggedIn, function(req, res) {
     	where: {id: req.user.id},
     	include: [db.nationalpark]
     }).then(function(wishlist){
-        console.log(wishlist);
     	res.render("parks/wishlist", {user: wishlist});
     });
 });

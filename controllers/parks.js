@@ -17,7 +17,7 @@ router.post("/", function(req,res){
 		var oldPark = JSON.parse(body).data;
 		var park = [];
 		for(var i=0; i<oldPark.length; i++){
-			if(oldPark[i].latLong !== ''){
+			if(oldPark[i].latLong !== '' && oldPark[i].description !== '' && oldPark[i].weatherInfo !== ''){
 				park.push(oldPark[i]);
 			}
 		}
