@@ -5,7 +5,6 @@
 	<% } else { %>
 		<h4 class="black_text""><a href="auth/login">Login</a> or <a href="auth/signup">create an account</a> to see additional information and weather forecast</h3>
 	<% } %>
-
 </div>
 <div class="park_display row form-group">
 	<div class="col-md-2"></div>
@@ -17,8 +16,8 @@
 					<div class="park_each">
 						<h3 class="white_text"><%=item.fullName%></h3>
 						<h5>Located in <%=item.states%></h5>
-						<p id="park_text"><%=item.description %></p>
-						<p style="text-align: center"><a class="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
+							<p id="park_text"><%=item.description %></p>
+							<p style="text-align: center"><a class="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
 						<form method="POST" action="/favs">
 							<% if(currentUser) {%>
 								<input hidden type="text" name="userId" value="<%= currentUser.id %>">
@@ -31,13 +30,6 @@
 			         			<input hidden type="text" name="description" value="<%= item.description %>">
 			          			<button id="save_button" type="submit">Add to Favorites</button>
 			          		<% } else { %>
-			          			<input hidden type="text" name="name" value="<%= item.fullName %>">
-			         			<input hidden type="text" name="designation" value="<%= item.designation %>">
-			         			<input hidden type="text" name="state" value="<%= item.states%>">
-			         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
-			         			<input hidden type="text" name="url" value="<%= item.url %>">
-			         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
-			         			<input hidden type="text" name="description" value="<%= item.description %>">
 			          			<button id="save_button" type="submit">Add to Favorites</button>
 							<% } %>
 		        		</form>
@@ -46,7 +38,6 @@
 			<%};%>
 	</div>
 	<div class="col-md-2"></div>
-
 </div>
 <h2><a class="top" href="#top_header">Back to Top</a></h2>
 

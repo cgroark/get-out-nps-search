@@ -9,7 +9,6 @@ var request = require('request');
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
 
-
 router.post("/", isLoggedIn, function (req, res){
 	db.nationalpark.find({
 		where: {
@@ -27,8 +26,5 @@ router.post("/", isLoggedIn, function (req, res){
 		});
 	});
 });
-
-
-
 
 module.exports = router;

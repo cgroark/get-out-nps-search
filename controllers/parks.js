@@ -6,9 +6,7 @@ var request = require('request');
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
 
-// router.get("/state", function(req, res){
-// 	res.render("parks/state");
-// });
+//post list of parks for each state based on search query
 
 router.post("/", function(req,res){
 	var state = req.body.state;
@@ -24,8 +22,6 @@ router.post("/", function(req,res){
 		res.render("parks/state", {park: park})
 	});	
 });
-
-
 
 module.exports = router;
 
