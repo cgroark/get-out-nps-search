@@ -1,27 +1,27 @@
-#Get Out There
-##National Park Wishlist App w/ Weather
+# Get Out There
+## National Park Wishlist App w/ Weather
 
-###Project Objective
+### Project Objective
 The objective is to build a Node web application using the Express web app server framework. The functionality of this application involves pulling information from three APIs, allowing users to create login information, and saving user data to a database
 
 ![Project Image](/images/front_page.png)
 ![Project Image](/images/park_page.png)
 
 
-##Get Out There: project goals
+### Get Out There: project goals
 * Display informaiton about US National Parks based on a search query and using their API
 * Display weather forecast information about individual parks using lat/long data from the National Parks API and passing it to the weather underground API
 * Display a marker for the park on a map using the Google Maps API and the lat/long data from the National Parks API
 * Allow users to save their favorite parks to a user profile if they are logged in
 
-##Technology
+## Technology
 * Bootstrap
 * Node.js
 * PostgresQL
 * APIs for the US National Parks, Google Maps and Weather Underground
 * HTML, CSS, JavaScript
 
-##Overall Approach
+### Overall Approach
 * Set up basic functions to test and understand API data structures
 * Set up initial views pages in ejs to display data on front-end
 * Set up database and models using PostgresQL
@@ -34,7 +34,7 @@ The objective is to build a Node web application using the Express web app serve
 * Use Bootstrap to make the sight responsive and mobile friendly
 * Deploy project remotely via Heroku
 
-##Challenges
+## Challenges
 * Building out logic to ensure only certain data is grabbed from the API (don't include Parks w/o Lat/Long data, for example)
 * Linking models so unique users are linked to their favorited parks
 * Converting data with JavaScript so the same parameter (longitude and lattitude) could be accessed even though the data format in APIs was different
@@ -42,7 +42,7 @@ The objective is to build a Node web application using the Express web app serve
 * Building fully responsive styling 
 * Database syncing with Heroku
 
-##Next Steps
+### Next Steps
 * Assess usability of search function on mobile device
 * Obtain full Heroku functionality  
 
