@@ -1,24 +1,24 @@
 <div>
-	<h2>National Parks</h2>
+	<h2 id="top_header">National Parks</h2>
 	<% if(currentUser) {%>
-		<h4 style="color: rgb(30,30,30)">Save a park to your wishlist to see additional information and weather forecast</h3>
+		<h4 class="black_text">Save a park to your wishlist to see additional information and weather forecast</h3>
 	<% } else { %>
-		<h4 style="color: rgb(30,30,30)"><a href="auth/login">Login</a> or <a href="auth/signup">create an account</a> to see additional information and weather forecast</h3>
+		<h4 class="black_text""><a href="auth/login">Login</a> or <a href="auth/signup">create an account</a> to see additional information and weather forecast</h3>
 	<% } %>
 
 </div>
 <div class="park_display row form-group">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
 		<% if(park.length <=0){ %>
 				<p>No Parks in that State</p>
 			<%} else {%>
 				<% park.forEach(function(item){ %>
 					<div class="park_each">
-						<h3 style="color: rgb(190,190,190)"><%=item.fullName%></h3>
+						<h3 class="white_text"><%=item.fullName%></h3>
 						<h5>Located in <%=item.states%></h5>
 						<p id="park_text"><%=item.description %></p>
-						<p style="text-align: center"><a id="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
+						<p style="text-align: center"><a class="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
 						<form method="POST" action="/favs">
 							<% if(currentUser) {%>
 								<input hidden type="text" name="userId" value="<%= currentUser.id %>">
@@ -45,8 +45,11 @@
 				<%});%>
 			<%};%>
 	</div>
-	<div class="col-md-1"></div>
+	<div class="col-md-2"></div>
+
 </div>
+<h2><a class="top" href="#top_header">Back to Top</a></h2>
+
 
 
 

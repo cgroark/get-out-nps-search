@@ -1,15 +1,16 @@
-<div class="text-center row form-group">
-	<div><h2><%= currentUser.firstname %>'s Park Wishlist</h2></div>
+<div id="top_header" class="text-center row form-group">
+	<div col-md-12><h2><%= currentUser.firstname %>'s Park Wishlist</h2></div>
 </div>
-	<h4 style="color:rgb(50,50,50">Click park name for weather forecast and more information. Search and explore more parks <a href="/">here</a>.</h4>
-	
+	<% if(user.nationalparks.length >0){ %>
+	<h4 class="black_text">Click park name for weather forecast and more information.</h4>
+	<h4 class="black_text">Search and explore more parks <a href="/">here</a>.</h4>
+	<% };%>
 <div class="park_display text-center row form-group">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-		
 		<% if(user.nationalparks.length <=0){ %>
 				<h3>You don't have any parks on your wishlist</h3>
-				<h4 style="color:rgb(50,50,50">Search for National Parks <a href="/">here</a></h4>
+				<h4 class="black_text">Search for National Parks <a href="/">here</a></h4>
 			<%} else {%>
 				<% user.nationalparks.forEach(function(item) { %>		
 					<div class="park_each">
@@ -25,3 +26,6 @@
 	</div>
 	<div class="col-md-2"></div>
 </div>
+<div class="col-md-1"></div>
+<h2><a class="top" href="#top_header">Back to Top</a></h2>
+

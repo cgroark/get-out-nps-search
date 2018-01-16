@@ -11,8 +11,7 @@ var app = express();
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
 var mapApi = process.env.MAPS_API;
-var geocoder = require("geocoder")
-
+var async= require("async");
 //set up middleware
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false }));
