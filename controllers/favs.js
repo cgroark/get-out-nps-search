@@ -19,7 +19,7 @@ router.get("/", isLoggedIn, function(req, res) {
 
 //add favorite parks to db for specific user
 router.post("/", isLoggedIn, function(req, res) {
-	db.nationalpark.findOrCreate({
+	db.nationalpark.create({
         where: {
             name: req.body.name,
         },

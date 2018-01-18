@@ -19,6 +19,7 @@ router.post("/", function(req,res){
 				park.push(oldPark[i]);
 			}
 		}
+		console.log(park[0])
 		res.render("parks/state", {park: park})
 	});	
 });
