@@ -37,10 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-      user.associate = function(models) {
-        models.user.hasMany(models.nationalpark);
-        // associations can be defined here
-  };
+
   user.prototype.isValidPassword = function(passwordTyped){
   return bcrypt.compareSync(passwordTyped, this.password);
 }
@@ -50,5 +47,10 @@ user.prototype.toJSON = function (){
   delete user.password;
     return user;
 }
+  
+  user.associate = function(models) {
+        models.user.hasMany(models.nationalpark);
+        // associations can be defined here
+  };
   return user;
 };
