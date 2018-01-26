@@ -40,7 +40,8 @@ router.post("/", isLoggedIn, function(req, res) {
             res.redirect("/favs")
         }
     }).catch(function(err){
-		res.send("error error!", err);
+		console.log("error error!", err);
+        res.status(500).send("An error occurred!");
 	});
 });
 
