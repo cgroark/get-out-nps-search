@@ -10,7 +10,10 @@
 #navbar_text{
 	color: rgb(50,50,50);
 	font-family: 'Raleway', sans-serif;
-
+	font-size: 22px;
+}
+#navbar_text:hover{
+	color: rgb(247, 147, 42);
 }
 .navbar{
 	background-color: rgba(50,50,50,.3);
@@ -19,15 +22,22 @@
 */
 h1{
 	font-family: 'Poiret One', cursive;
-	font-size: 86px;
+	font-size: 120px;
 	font-weight: 800;
 	text-transform: capitalize;
 	text-align: center;
+}
+
+@media (max-width: 600px) {
+ h1{
+  font-size: 84px;
+  }
 }
 h2{
 	font-family: 'Poiret One', cursive;
 	font-size: 54px;
 	font-weight: 800;
+	margin-bottom: 30px;
 	text-transform: capitalize;
 	text-align: center;
 }
@@ -65,11 +75,18 @@ h3.white_text{
 }
 h4{
 	font-family: 'Raleway', sans-serif;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 800;
 	color: rgb(200,200,200);
 	text-align: center;
 }
+
+@media (max-width: 600px) {
+ h4{
+  font-size: 28px;
+  }
+}
+
 h4.black_text {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
@@ -94,18 +111,31 @@ p{
 /*homepage
 */
 #search_button{
-	width: 120px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    margin-top: -10px;
+    font-family: 'Poiret One', cursive;
 }
 #state_search{
-	width: 250px;
-	height: 35px;
+    width: 220px;
+    height: 35px;
+    font-family: 'Poiret One', cursive;
+    color: black;
+    border: none;
+    border-bottom: solid black 2px;
+    font-size: 18px;
+    background-color: transparent;
+}
+.form-control{
+	background-color: transparent;
 }
 .park_each{
 	background-color: rgba(50,50,50,.4);
 	padding: 30px 18px;
 	margin-bottom: 10px;
  }
- .park_each:hover{
+.park_each:hover{
 	background-color: rgba(50,50,50,.7);
  }
 /*parksAllpage
@@ -166,11 +196,32 @@ p{
 	margin: auto;
 	display: block;
 }
+.auth_submit:hover{
+	color: rgb(70,70,70);
+}
 .auth_format{
 	font-family: 'Raleway', sans-serif;
-	background-color: rgba(50,50,50,.4);
+	background-color: transparent;
 	padding: 15px 15px;
 	color: rgb(195,195,195);	
+}
+
+.signup-link{
+	font-family: 'Raleway', sans-serif;
+	color: rgb(247, 147, 42);
+	font-size: 24px;
+	font-weight: 800;
+}
+.signup-link:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.signin-form{
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	font-weight: 800;
+	color: rgb(30,30,30);	
 }
 /*favorites
 */
