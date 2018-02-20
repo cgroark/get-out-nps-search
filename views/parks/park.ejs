@@ -1,48 +1,52 @@
 
-<div class="weather_container">
-	<h2 id="top_header"><%=weatherData.parkStuff.name%></h2>
-	<div class="row form-group">
-		<div class="header2 col-md-12">
+<div class="background">
+	<div class="text-center row form-group">
+		<div class="col-md-12">
+			<h1 id="top_header"><%=weatherData.parkStuff.name%></h1>		
 		</div>
 	</div>
+</div>
+<div class="weather_container">
+
 	<div class="row form-group">
-		<div class="col-md-1"></div>
-		<div class="moreinfo col-md-5">
+		<div class="moreinfo col-lg-5 col-lg-offset-1 col-sm-6 col-sm-offset-3">
 			<h3 class="orange_text">Overview</h3>
 				<p><%=weatherData.parkStuff.description%><a class="park_url" href="<%= weatherData.parkStuff.url%>" target="blank"> Visit Park Website</a></p>
 			<h3 class="orange_text">Typical Weather</h3>
 				<p><%=weatherData.parkStuff.weatherInfo%></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-lg-5 col-lg-offset-0 col-sm-6 col-sm-offset-3">
 			<h3 class="orange_text">Location</h3>
 				<div id="state-map"></div>
 		</div>
-		<div class="col-md-1"></div>
 	</div>
 	<h2 class="orange_text">Weather Forecast</h2>
 		<div class="weather_data">
 			<div class="weather_row row form-group">
-				<% for(var i=0; i<3; i++){ %>
-					<div class="weather_cell col-md-4">
-						<h4><%=weatherData.txt_forecast.forecastday[i].title%></h4>
+				<div class="col-lg-2 col-sm-0"></div>
+				<% for(var i=0; i<4; i++){ %>
+					<div class="weather_cell col-lg-2 col-sm-6">
+						<h4 class="black_text"><%=weatherData.txt_forecast.forecastday[i].title%></h4>
 							<p class="weather_text"><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
 							<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
 					</div>
 				<%}%>
 			</div>
 			<div class="weather_row row form-group">
-				<% for(var i=3; i<6; i++){ %>
-					<div class="weather_cell col-md-4">
-						<h4><%=weatherData.txt_forecast.forecastday[i].title%></h4>
+				<div class="col-lg-2 col-sm-0"></div>
+				<% for(var i=4; i<8; i++){ %>
+					<div class="weather_cell col-lg-2 col-sm-6">
+						<h4 class="black_text"><%=weatherData.txt_forecast.forecastday[i].title%></h4>
 							<p class="weather_text"><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
 							<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
 					</div>
 				<%}%>
 			</div>
 			<div class="weather_row row form-group">
-				<% for(var i=6; i<9; i++){ %>
-					<div class="weather_cell col-md-4">
-						<h4><%=weatherData.txt_forecast.forecastday[i].title%></h4>
+				<div class="col-lg-2 col-sm-0"></div>
+				<% for(var i=8; i<12; i++){ %>
+					<div class="weather_cell col-lg-2 col-sm-6">
+						<h4 class="black_text"><%=weatherData.txt_forecast.forecastday[i].title%></h4>
 							<p><%=weatherData.txt_forecast.forecastday[i].fcttext%></p>
 							<img class="weather_image" src="<%= weatherData.txt_forecast.forecastday[i].icon_url %>">
 					</div>

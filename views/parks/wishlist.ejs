@@ -1,30 +1,73 @@
-<div id="top_header" class="text-center row form-group">
-	<div col-md-12><h2><%= currentUser.firstname %>'s Park Wishlist</h2></div>
+<div class="background">
+	<div id="top_header" class="text-center row form-group">
+		<div col-md-12><h1><%= currentUser.firstname %>'s Park Wishlist</h1></div>
+	</div>
 </div>
-	<% if(user.nationalparks.length >0){ %>
-	<h4 class="black_text">Click park name for weather forecast and more information.</h4>
-	<h4 class="black_text">Search and explore more parks <a href="/">here</a>.</h4>
-	<% };%>
+		<% if(user.nationalparks.length >0){ %>
+		<h4 class="black_text">Click park name for weather forecast and more information.</h4>
+		<h4 class="black_text">Search and explore more parks <a href="/">here</a>.</h4>
+		<% };%>
 <div class="park_display text-center row form-group">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
 		<% if(user.nationalparks.length <=0){ %>
 				<h3>You don't have any parks on your wishlist</h3>
 				<h4 class="black_text">Search for National Parks <a href="/">here</a></h4>
-			<%} else {%>
-				<% user.nationalparks.forEach(function(item) { %>		
-					<div class="park_each">
-							<form method="POST" action="/weather">
-								<input type="hidden" type="text" name="name" value="<%=item.name%>">
-								<input class="favs_link" type="submit" value="<%= item.name %>" id="weather_button">
-							</form>
+		<%} else if(user.nationalparks.length === 1) {%>
+				<div class="col-lg-4 col-lg-offset-2 col-sm-6 col-sm-offset-3">
+					<div class="park_each_favs">
+					<h3><%=user.nationalparks[0].name%></h3>
+					<form method="POST" action="/weather">
+						<input type="hidden" type="text" name="name" value="<%=user.nationalparks[0].name %>">
+						<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+					</form>
+					<h5>Located in <%= user.nationalparks[0].state %></h5>
+					<a href="/favs/<%= user.nationalparks[0].id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3">
+				<div class="park_each_favs_one">
+					<h3>Only 1 park on your list?</h3>
+					<h4 class="black_text">Search for more National Parks <a href="/">here</a></h4>
+					<a href="/"><img class="logo-wish" alt="icon" src="/images/mountain.png"></a>
+				</div>
+				</div>
+		<%} else {%>
+			<% for(var i=0; i<user.nationalparks.length; i++) { %>
+				<%if(i % 2 ===0){ %>
+					<% var oddArr = []%>
+					<% oddArr.push(user.nationalparks[i])%>
+					<div class="col-lg-4 col-lg-offset-2 col-sm-6 col-sm-offset-3">
+						<% oddArr.map(function(item) { %>		
+							<div class="park_each_favs">
+								<h3><%=item.name%></h3>
+								<form method="POST" action="/weather">
+									<input type="hidden" type="text" name="name" value="<%=item.name%>">
+									<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+								</form>
 							<h5>Located in <%=item.state%></h5>
 							<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+							</div>
+						<% });%>
 					</div>
-				<% });%>
+				<%} else {%>
+					<% var evenArr = []%>
+					<% evenArr.push(user.nationalparks[i])%>
+					<div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3">
+					<% evenArr.map(function(item) { %>		
+						<div class="park_each_favs">
+							<h3><%=item.name%></h3>
+							<form method="POST" action="/weather">
+								<input type="hidden" type="text" name="name" value="<%=item.name%>">
+								<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+							</form>
+						<h5>Located in <%=item.state%></h5>
+						<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+						</div>
+					<% });%>
+					</div>
+				<% }%>
+			<%}%>
+			
 			<%};%>
-	</div>
-	<div class="col-md-2"></div>
 </div>
 <div class="col-md-1"></div>
 <h2><a class="top" href="#top_header">Back to Top</a></h2>

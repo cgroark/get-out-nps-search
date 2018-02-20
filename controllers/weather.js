@@ -9,35 +9,17 @@ var request = require('request');
 var parksApi = process.env.PARKS_API;
 var weatherApi = process.env.WEATHER_API;
 
-// router.post("/", isLoggedIn, function (req, res){
-// 	db.nationalpark.find({
-// 		where: {
-// 			name: req.body.name
-// 			}
-// 	}).then (function (info){
-// 		var latlong = info.Latlong;
-// 		var learning = latlong.split(":").splice(1);
-// 		var enoughAlready = learning[0].split(",")[0] + "," + learning[1];
-// 		var weatherUrl = "http://api.wunderground.com/api/" + weatherApi + "/forecast10day/q/" + enoughAlready + ".json";
-// 		request(weatherUrl, function (error, response, body){
-// 			var weatherData = JSON.parse(body).forecast;
-// 			weatherData.parkStuff = info;
-// 			res.render("parks/park", {weatherData: weatherData});
-// 		});
-// 	});
-// });
-
 router.post("/", isLoggedIn, function (req, res){
 	var info;
 	var weatherData;
 
 	function fn1(callback){
+		console.log("nnnnnnammmmm", req.body.name)
 		db.nationalpark.find({
 		where: {
 			name: req.body.name
 			}
 		}).then (function (info){
-			console.log("#########function 1")
 			callback(null, info);
 		})
 	}
@@ -49,12 +31,10 @@ router.post("/", isLoggedIn, function (req, res){
 		request(weatherUrl, function (error, response, body){
 			weatherData = JSON.parse(body).forecast;
 			weatherData.parkStuff = info;
-			console.log("#######function 2")
 			callback(null, weatherData)
 		})
 	}
 	async.waterfall([fn1, fn2], function(err, results) {
-	  console.log("######ASYNCCCCC");
 	  res.render("parks/park", {weatherData: weatherData});
 	});
 

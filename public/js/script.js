@@ -1,4 +1,3 @@
-  
   var latLong = dataObject.parkStuff.Latlong;
   var newLat = latLong.split(":");
   var longitude = parseFloat(newLat[2]);
@@ -21,6 +20,5 @@
       });
       };
     }
-
 
 

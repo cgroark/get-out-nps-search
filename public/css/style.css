@@ -1,10 +1,17 @@
 
 /*navbar
 */
-#logo {
-	height: 55px;
+.logo {
+	height: 40px;
 	position: relative;
-	top: -18px;
+	top: -10px;
+	width: auto;
+}
+.logo-wish {
+	height: 40px;
+	margin-top: 25px;
+	text-align: center;
+	top: -10px;
 	width: auto;
 }
 #navbar_text{
@@ -16,7 +23,8 @@
 	color: rgb(247, 147, 42);
 }
 .navbar{
-	background-color: rgba(50,50,50,.3);
+	background-color: white;
+	height: 42px;
 }
 /*headers
 */
@@ -26,15 +34,17 @@ h1{
 	font-weight: 800;
 	text-transform: capitalize;
 	text-align: center;
+	color: white;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
  h1{
-  font-size: 84px;
+  font-size: 60px;
   }
 }
 h2{
 	font-family: 'Poiret One', cursive;
+	color: white;
 	font-size: 54px;
 	font-weight: 800;
 	margin-bottom: 30px;
@@ -53,8 +63,7 @@ h3{
 	font-family: 'Raleway', sans-serif;
 	font-size: 30px;
 	font-weight: 800;
-	color: rgb(50,50,50);
-	text-transform: capitalize;
+	color: rgb(30,30,30);		
 	text-align: center;
 }
 h3.orange_text{
@@ -69,7 +78,7 @@ h3.white_text{
 	font-family: 'Raleway', sans-serif;
 	font-size: 30px;
 	font-weight: 800;
-	color:rgb(190,190,190);
+	color:white;
 	text-transform: capitalize;
 	text-align: center;
 }
@@ -77,22 +86,31 @@ h4{
 	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
 	font-weight: 800;
-	color: rgb(200,200,200);
+	color: white;
 	text-align: center;
-}
-
-@media (max-width: 600px) {
- h4{
-  font-size: 28px;
-  }
 }
 
 h4.black_text {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
-	font-weight: 800;
+	font-weight: 500;
 	color: rgb(30,30,30);	
 	text-align: center;
+}
+.h4-link{
+	font-family: 'Raleway', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	color: rgb(30,30,30);		
+	text-align: center;
+	text-decoration: underline;
+}
+.h4-link:hover{
+	color: rgb(247, 147, 42);	
+	text-decoration: none;
+}
+
+
 }
 h5{
 	font-family: 'Raleway', sans-serif;
@@ -116,8 +134,9 @@ p{
     font-size: 18px;
     margin-top: -10px;
     font-family: 'Poiret One', cursive;
+    color: black;
 }
-#state_search{
+.state_search{
     width: 220px;
     height: 35px;
     font-family: 'Poiret One', cursive;
@@ -127,36 +146,60 @@ p{
     font-size: 18px;
     background-color: transparent;
 }
+.search-container{
+	margin-top: 4%;
+}
+
 .form-control{
 	background-color: transparent;
 }
 .park_each{
-	background-color: rgba(50,50,50,.4);
-	padding: 30px 18px;
+/*	url("/images/back6.jpg");
+*/	
+	background-image: linear-gradient(bottom, #FFD51A 50%, #FAC815 50%);
+	padding: 3px 18px;
 	margin-bottom: 10px;
+	height: 420px;
+	border: solid black 3px;
+	border-radius: 8px;
+ }
+ .park_each_favs{
+	background-color: white);
+	padding: 3px 18px;
+	margin-bottom: 10px;
+	height: 220px;
+	border: solid black 3px;
+	border-radius: 8px;
+ }
+ .park_each_favs_one{
+ 	color: black;
+	background-color: white);
+	padding: 3px 18px;
+	margin-bottom: 10px;
+	height: 220px;
+	border: dashed black 3px;
+	border-radius: 8px;
  }
 .park_each:hover{
-	background-color: rgba(50,50,50,.7);
+	background-color: rgba(210,210,210,.7);
  }
-/*parksAllpage
-*/
+
 .park_display{
-	height: 600px;
+	margin-top: 30px;
+	height: 500px;
 	overflow: scroll;
 }
 .favs_link:hover{
 	text-decoration: underline;
 }
-#park_text{
+.park_text{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(10,10,10);
 	font-size: 17px;
+	overflow: scroll;
+	height: 200px;
 }
-.park_url{
-	font-family: 'Raleway', sans-serif;
-	color: rgb(247, 147, 42);
-	font-size: 14px;
-}
+
 .top{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
@@ -165,30 +208,40 @@ p{
 	text-align: center;
 
 }
-#save_button:hover{
-	font-family: 'Raleway', sans-serif;
-	color: rgb(247, 147, 42);
-	margin-bottom: 15px;
-	font-size: 22px;
-	background-color: inherit;
-	border: none;
-	margin: auto;
-	display: block;
-	text-decoration: underline;
-}
+
 #save_button{
 	font-family: 'Raleway', sans-serif;
-	color: rgb(247, 147, 42);
+	color: #3E562F;
 	margin-bottom: 15px;
 	font-size: 22px;
 	background-color: inherit;
 	border: none;
 	margin: auto;
 	display: block;
+}
+#save_button:hover{
+	text-decoration: underline;
+}
+.location-park{
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-weight: 800;
+	color: rgb(100,100,100);
+	text-align: center;
+	margin-top: 8px;
+	letter-spacing: 2px;
+}
+.park_url{
+	font-family: 'Raleway', sans-serif;
+	color: #3E562F;
+	font-size: 14px;
+}
+.park_url:hover{
+	text-decoration: underline;
 }
 .auth_submit{
 	font-family: 'Raleway', sans-serif;
-	color: rgb(247, 147, 42);
+	color: white;
 	margin-bottom: 15px;
 	font-size: 18px;
 	background-color: inherit;
@@ -197,7 +250,7 @@ p{
 	display: block;
 }
 .auth_submit:hover{
-	color: rgb(70,70,70);
+	color: rgb(247, 147, 42);
 }
 .auth_format{
 	font-family: 'Raleway', sans-serif;
@@ -213,25 +266,32 @@ p{
 	font-weight: 800;
 }
 .signup-link:hover{
-	color: white;
+	color: rgb(30,30,30);
 	text-decoration: none;
 }
 
 .signin-form{
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
-	font-weight: 800;
-	color: rgb(30,30,30);	
+	font-weight: 400;
+	color: white;	
+}
+.auth-input{
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	color: white;
+	letter-spacing: 2px;	
 }
 /*favorites
 */
 #weather_button{
 	font-family: 'Raleway', sans-serif;
-	color: rgb(195,195,195);	
+	color: rgb(30,30,30);	
 	margin-bottom: 15px;
-	font-size: 26px;
+	font-size: 30px;
 	background-color: inherit;
 	border: none;
+	text-align: center;
 }
 #delete_button{
 	color: rgb(247, 147, 42);
@@ -242,20 +302,21 @@ p{
 }
 /*weather
 */
-.moreinfo:hover{
-	background-color: rgba(150,150,150,.45);
 
 }
 .weather_data{
-	height: 280px;
-	overflow:scroll;
 }
 .weather_row{
-	background-color: rgba(150,150,150,.15);
+	background-color: white;
+	margin: 0 4%;
+	border-bottom: solid black 2px;	
 }
-.weather_row:hover{
-	background-color: rgba(150,150,150,.45);
+@media (max-width: 1200px) {
+	.weather_row {
+	margin: 0 16%;
+	}
 }
+
 .weather_cell{
 	text-align: center;
 }
@@ -270,18 +331,27 @@ p{
 /*layout
 */
 .background{
-	background-image: url("/images/background4.jpg");
+	background-image: url("/images/back6.jpg");
 	background-size: cover;
+	height: 100%;
+	margin-top: -20px;
 }
-.body_container{
+.body-section{
+	background-color: white;
+	height: 40vh;
+}
+/*.body_container{
 	height: 1000px;
-}
+}*/
 
 
-@media (max-width: 999px) {
+@media (max-width: 992px) {
   .body_container {
     height: 1300px;
   }
+}
+hr{
+	width: 80%;
 }
 .clearfix:after {
 	visibility: hidden;
