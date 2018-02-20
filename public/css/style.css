@@ -189,9 +189,7 @@ p{
 	height: 500px;
 	overflow: scroll;
 }
-.favs_link:hover{
-	text-decoration: underline;
-}
+
 .park_text{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(10,10,10);
@@ -284,14 +282,17 @@ p{
 }
 /*favorites
 */
-#weather_button{
+.weather_button{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(30,30,30);	
 	margin-bottom: 15px;
-	font-size: 30px;
+	font-size: 18px;
 	background-color: inherit;
 	border: none;
 	text-align: center;
+}
+.weather_button:hover{
+	text-decoration: underline;
 }
 #delete_button{
 	color: rgb(247, 147, 42);

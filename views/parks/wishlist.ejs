@@ -4,7 +4,6 @@
 	</div>
 </div>
 		<% if(user.nationalparks.length >0){ %>
-		<h4 class="black_text">Click park name for weather forecast and more information.</h4>
 		<h4 class="black_text">Search and explore more parks <a href="/">here</a>.</h4>
 		<% };%>
 <div class="park_display text-center row form-group">
@@ -17,7 +16,7 @@
 					<h3><%=user.nationalparks[0].name%></h3>
 					<form method="POST" action="/weather">
 						<input type="hidden" type="text" name="name" value="<%=user.nationalparks[0].name %>">
-						<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+						<input type="submit" value="More Info and Weather" class="weather_button">
 					</form>
 					<h5>Located in <%= user.nationalparks[0].state %></h5>
 					<a href="/favs/<%= user.nationalparks[0].id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
@@ -41,7 +40,7 @@
 								<h3><%=item.name%></h3>
 								<form method="POST" action="/weather">
 									<input type="hidden" type="text" name="name" value="<%=item.name%>">
-									<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+									<input type="submit" value="More Info and Weather" class="weather_button">
 								</form>
 							<h5>Located in <%=item.state%></h5>
 							<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
@@ -57,7 +56,7 @@
 							<h3><%=item.name%></h3>
 							<form method="POST" action="/weather">
 								<input type="hidden" type="text" name="name" value="<%=item.name%>">
-								<input class="favs_link" type="submit" value="More Info and Weather" id="weather_button">
+								<input type="submit" value="More Info and Weather" class="weather_button">
 							</form>
 						<h5>Located in <%=item.state%></h5>
 						<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
