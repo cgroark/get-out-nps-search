@@ -43,7 +43,7 @@
 									<input type="hidden" type="text" name="name" value="<%=item.name%>">
 									<input type="submit" value="More Info and Weather" class="weather_button">
 								</form>
-							<p>Remove from wishlist:<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">X</a></p>
+							<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove from wishlist</a>
 							</div>
 						<% });%>
 					</div>
@@ -59,7 +59,7 @@
 								<input type="hidden" type="text" name="name" value="<%=item.name%>">
 								<input type="submit" value="More Info and Weather" class="weather_button">
 							</form>
-						<p>Remove from wishlist:<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">X</a></p>
+						<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove from wishlist</a>
 						</div>
 					<% });%>
 					</div>

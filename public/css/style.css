@@ -111,27 +111,27 @@ p{
 */
 #search_button{
     background-color: transparent;
-    border: none;
+    border: solid black;
     font-size: 22px;
-    margin-top: -10px;
+    margin-top: 0px;
     font-family: 'Poiret One', cursive;
     color: black;
 }
 #search_button:hover{
-    color: rgb(38, 124, 67);
-    text-decoration: underline;
+    color: white;
+    background-color: rgb(35, 40, 34);
 }
 #search_button_2{
     background-color: transparent;
-    border: none;
-    font-size: 22px;
-    margin-top: -10px;
-    font-family: 'Poiret One', cursive;
+    border: solid white;
+    font-size: 18px;
+    margin-top: 0px;
+    font-family: 'Raleway', sans-serif;
     color: white;
 }
 #search_button_2:hover{
     color: rgb(38, 124, 67);
-    text-decoration: underline;
+    background-color: white;
 }
 #search_form{
 	display: none;
@@ -146,7 +146,7 @@ p{
 	margin-top: 15px;
     width: 220px;
     height: 35px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Raleway', sans-serif;
     color: white;
     border: none;
     border-bottom: solid black 2px;
@@ -277,28 +277,38 @@ p{
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	color: white;
-	letter-spacing: 2px;	
+	letter-spacing: 2px;
+	background-color: rgba(100,100,100,.6);
 }
 /*favorites
 */
 .weather_button{
-	font-family: 'Raleway', sans-serif;
-	color: #3E562F;	
 	margin-bottom: 15px;
 	font-size: 20px;
 	background-color: inherit;
-	border: none;
 	text-align: center;
+	background-color: transparent;
+    border: solid black;
+    font-size: 18px;
+    margin-top: 0px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(38, 124, 67);
+    border-radius: 3px;
 }
 .weather_button:hover{
-	text-decoration: underline;
-}
+	color: white;
+    background-color: rgb(38, 124, 67);
+   }
+
 #delete_button{
 	color: #3E562F;
 	margin: 0 0 5px 15px;
-	font-size: 18px;
+	font-size: 16px;
 	background-color: transparent;
 	border: none;
+}
+#delete_button:hover{
+	color: black;
 }
 /*weather
 */
@@ -327,6 +337,7 @@ p{
 	height: 100%;
 	margin-top: -20px;
 }
+
 .body-section{
 	background-color: white;
 	height: 40vh;

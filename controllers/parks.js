@@ -12,6 +12,7 @@ router.post("/", function(req,res){
 	var state = req.body.state;
 	var parkData = "https://developer.nps.gov/api/v1/parks?stateCode=" + state + "&api_key=" + parksApi;
 	request(parkData, function(error, response, body){
+		if(error){ console.log("errrrrr######or")}
 		var oldPark = JSON.parse(body).data;
 		var park = [];
 		for(var i=0; i<oldPark.length; i++){
