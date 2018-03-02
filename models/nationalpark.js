@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     description: DataTypes.TEXT,
     weatherInfo: DataTypes.TEXT
-  });
-    nationalpark.associate = function(models){
+  }, {});
+  nationalpark.associate = function(models){
         models.nationalpark.belongsTo(models.user);// associations can be defined here
       };
   return nationalpark;

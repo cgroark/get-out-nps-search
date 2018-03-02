@@ -1,7 +1,7 @@
 {
   "name": "weathersearch_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Project Objective The objective is to build a Node web application using the Express web app server framework. The functionality of this application involves pulling information from three APIs, allowing users to create login information, and saving user data to a database",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +25,17 @@
     "pg": "^6.4.1",
     "pg-hstore": "^2.3.2",
     "process": "^0.11.10",
+    "request": "^2.83.0",
     "sequelize": "^4.29.0",
     "sequelize-cli": "^3.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgroark/project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cgroark/project2/issues"
+  },
+  "homepage": "https://github.com/cgroark/project2#readme"
 }

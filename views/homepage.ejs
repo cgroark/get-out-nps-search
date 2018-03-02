@@ -12,7 +12,8 @@
 	<div class="text-center row form-group search-container">
 		<div class="col-md-12">
 			<h3>Ready to start planning?</h3>
-				<form method="POST" action="/parks">
+			<div class="button_div"><input id="search_button" type="button" value="Find Parks" class="btn" onclick="showForm()"></div>	
+				<form method="POST" action="/parks" class="animated fadeInUp" id="search_form">
 				<div class="text-center row form-group">
 						<div class="col-md-12"><select class="state_search"  name="state" id="state">
 							  <option value="" selected="selected">Select a State</option>
@@ -70,16 +71,13 @@
 						</select></div>
 					</div>
 					<div class="text-center row form-group">
-					<div class="col-md-12"><input id="search_button" type="submit" value="Search" class="btn btn-primary"></div>
+					<div class="col-md-12"><input id="search_button_2" type="submit" value="Search" class="btn btn-primary"></div>
 					</div>
 					<div clas="fill"></div>
 				</form>
 		</div>
 	</div>
-
-
-		
-	</div>
+</div>
 
 
 

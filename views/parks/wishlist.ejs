@@ -1,6 +1,6 @@
 <div class="background">
 	<div id="top_header" class="text-center row form-group">
-		<div col-md-12><h1><%= currentUser.firstname %>'s Park Wishlist</h1></div>
+		<div class="col-md-12"><h2><%= currentUser.firstname %>'s Park Wishlist</h2></div>
 	</div>
 </div>
 		<% if(user.nationalparks.length >0){ %>
@@ -38,12 +38,12 @@
 						<% oddArr.map(function(item) { %>		
 							<div class="park_each_favs">
 								<h3><%=item.name%></h3>
-								<form method="POST" action="/weather">
+							<h5>Located in <%=item.state%></h5>
+							<form method="POST" action="/weather">
 									<input type="hidden" type="text" name="name" value="<%=item.name%>">
 									<input type="submit" value="More Info and Weather" class="weather_button">
 								</form>
-							<h5>Located in <%=item.state%></h5>
-							<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+							<p>Remove from wishlist:<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">X</a></p>
 							</div>
 						<% });%>
 					</div>
@@ -54,12 +54,12 @@
 					<% evenArr.map(function(item) { %>		
 						<div class="park_each_favs">
 							<h3><%=item.name%></h3>
-							<form method="POST" action="/weather">
+						<h5>Located in <%=item.state%></h5>
+						<form method="POST" action="/weather">
 								<input type="hidden" type="text" name="name" value="<%=item.name%>">
 								<input type="submit" value="More Info and Weather" class="weather_button">
 							</form>
-						<h5>Located in <%=item.state%></h5>
-						<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">Remove Park from Wishlist</a>
+						<p>Remove from wishlist:<a href="/favs/<%= item.id %>" id="delete_button" class="delete-link">X</a></p>
 						</div>
 					<% });%>
 					</div>

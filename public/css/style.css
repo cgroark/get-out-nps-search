@@ -36,42 +36,28 @@ h1{
 	text-align: center;
 	color: white;
 }
-
-@media (max-width: 992px) {
- h1{
-  font-size: 60px;
-  }
-}
 h2{
 	font-family: 'Poiret One', cursive;
 	color: white;
 	font-size: 54px;
 	font-weight: 800;
-	margin-bottom: 30px;
-	text-transform: capitalize;
+/*	margin-bottom: 30px;
+*/	text-transform: capitalize;
 	text-align: center;
 }
-h2.orange_text{
+h2.black{
 	font-family: 'Poiret One', cursive;
+	color: black;
 	font-size: 54px;
 	font-weight: 800;
 	text-transform: capitalize;
 	text-align: center;
-	color:rgb(247, 147, 42);
 }
 h3{
 	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: 800;
 	color: rgb(30,30,30);		
-	text-align: center;
-}
-h3.orange_text{
-	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
-	font-weight: 800;
-	color:rgb(247, 147, 42);
-	text-transform: capitalize;
 	text-align: center;
 }
 h3.white_text{
@@ -89,7 +75,6 @@ h4{
 	color: white;
 	text-align: center;
 }
-
 h4.black_text {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
@@ -109,16 +94,12 @@ h4.black_text {
 	color: rgb(247, 147, 42);	
 	text-decoration: none;
 }
-
-
-}
 h5{
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 800;
-	color: rgb(200,200,200);
+	color: rgb(112,112,112);
 	text-align: center;
-	margin-top: -8px;
 }
 p{
 	color:black;
@@ -131,35 +112,58 @@ p{
 #search_button{
     background-color: transparent;
     border: none;
-    font-size: 18px;
+    font-size: 22px;
     margin-top: -10px;
     font-family: 'Poiret One', cursive;
     color: black;
 }
+#search_button:hover{
+    color: rgb(38, 124, 67);
+    text-decoration: underline;
+}
+#search_button_2{
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    margin-top: -10px;
+    font-family: 'Poiret One', cursive;
+    color: white;
+}
+#search_button_2:hover{
+    color: rgb(38, 124, 67);
+    text-decoration: underline;
+}
+#search_form{
+	display: none;
+	margin-top: -220px;
+	border: solid black 3px;
+	width: 320px;
+	height: 120px;
+	background-color: rgb(35, 40, 34);
+	border-radius: 2px;
+}
 .state_search{
+	margin-top: 15px;
     width: 220px;
     height: 35px;
     font-family: 'Poiret One', cursive;
-    color: black;
+    color: white;
     border: none;
     border-bottom: solid black 2px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: transparent;
 }
 .search-container{
 	margin-top: 4%;
 }
-
 .form-control{
 	background-color: transparent;
 }
-.park_each{
-/*	url("/images/back6.jpg");
-*/	
+.park_each{	
 	background-image: linear-gradient(bottom, #FFD51A 50%, #FAC815 50%);
 	padding: 3px 18px;
 	margin-bottom: 10px;
-	height: 420px;
+	height: 360px;
 	border: solid black 3px;
 	border-radius: 8px;
  }
@@ -183,34 +187,29 @@ p{
 .park_each:hover{
 	background-color: rgba(210,210,210,.7);
  }
-
 .park_display{
 	margin-top: 30px;
-	height: 500px;
+	height: 800px;
 	overflow: scroll;
 }
-
 .park_text{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(10,10,10);
-	font-size: 17px;
+	font-size: 15px;
 	overflow: scroll;
-	height: 200px;
+	height: 130px;
+	margin-bottom: 20px;
 }
-
 .top{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
 	font-size: 18px;
 	margin-top: 16px;
 	text-align: center;
-
 }
-
 #save_button{
 	font-family: 'Raleway', sans-serif;
 	color: #3E562F;
-	margin-bottom: 15px;
 	font-size: 22px;
 	background-color: inherit;
 	border: none;
@@ -233,11 +232,13 @@ p{
 	font-family: 'Raleway', sans-serif;
 	color: #3E562F;
 	font-size: 14px;
+	margin-top: 5px;
 }
 .park_url:hover{
 	text-decoration: underline;
 }
-.auth_submit{
+/*auth pages
+*/.auth_submit{
 	font-family: 'Raleway', sans-serif;
 	color: white;
 	margin-bottom: 15px;
@@ -256,7 +257,6 @@ p{
 	padding: 15px 15px;
 	color: rgb(195,195,195);	
 }
-
 .signup-link{
 	font-family: 'Raleway', sans-serif;
 	color: rgb(247, 147, 42);
@@ -267,7 +267,6 @@ p{
 	color: rgb(30,30,30);
 	text-decoration: none;
 }
-
 .signin-form{
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
@@ -284,9 +283,9 @@ p{
 */
 .weather_button{
 	font-family: 'Raleway', sans-serif;
-	color: rgb(30,30,30);	
+	color: #3E562F;	
 	margin-bottom: 15px;
-	font-size: 18px;
+	font-size: 20px;
 	background-color: inherit;
 	border: none;
 	text-align: center;
@@ -295,8 +294,8 @@ p{
 	text-decoration: underline;
 }
 #delete_button{
-	color: rgb(247, 147, 42);
-	margin-bottom: 15px;
+	color: #3E562F;
+	margin: 0 0 5px 15px;
 	font-size: 18px;
 	background-color: transparent;
 	border: none;
@@ -304,20 +303,11 @@ p{
 /*weather
 */
 
-}
-.weather_data{
-}
 .weather_row{
 	background-color: white;
 	margin: 0 4%;
 	border-bottom: solid black 2px;	
 }
-@media (max-width: 1200px) {
-	.weather_row {
-	margin: 0 16%;
-	}
-}
-
 .weather_cell{
 	text-align: center;
 }
@@ -341,52 +331,75 @@ p{
 	background-color: white;
 	height: 40vh;
 }
-/*.body_container{
-	height: 1000px;
-}*/
-
-
-@media (max-width: 992px) {
-  .body_container {
-    height: 1300px;
-  }
-}
 hr{
 	width: 80%;
 }
-.clearfix:after {
-	visibility: hidden;
-	display: block;
-	content: " ";
-	clear: both;
-	height: 0;
-	font-size: 0;
+body {
+   margin:0;
+   padding:0;
+   height:100%;
 }
-.clearfix:after {
-	visibility: hidden;
-	display: block;
-	content: " ";
-	clear: both;
-	height: 0;
-	font-size: 0;
+#container {
+   min-height:100%;
+   position:relative;
 }
+
+#body {
+   padding-bottom:50px;   /* Height of the footer */
+}
+
+/*footer*/
+
 footer {
+   	width:100%;
+   	height:50px;  
+	position:absolute;
 	text-transform: uppercase;
-	padding: 5px 20px;
-	background-color: rgba(30,30,30,.4);
+	padding: 11px 20px;
+	background-color: rgb(35, 40, 34);
 	font-size: 14px;
 	letter-spacing: .09em;
 	font-weight: 900;
 }
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
 .copyright {
 	font-family: 'Poiret One', cursive;
 	float: left;
+	color: white;
 }
 .message {
 	font-family: 'Poiret One', cursive;
 	float: right;
+	color: white;
 }
 .name {
 	color: #F15B31;
 	font-weight: 1000;
+}
+
+@media (max-width: 992px) {
+ h1{
+  font-size: 60px;
+  }
+  .body_container {
+    height: 1300px;
+  }
+  .weather_row {
+	margin: 0 16%;
+	}
 }

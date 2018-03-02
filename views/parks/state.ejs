@@ -1,7 +1,7 @@
 <div class="background">
 	<div class="text-center row form-group">
 		<div class="col-md-12">
-			<h1>National Parks</h1>
+			<h2 id="top_header">National Parks</h2>
 		</div>
 	</div>
 </div>
@@ -22,7 +22,7 @@
 					<% if(i % 2 == 0) { %>
 						<% var evenArr = [] %>
 							<% evenArr.push(park[i]) %>
-							<div class="col-lg-4 col-lg-offset-2 col-sm-6 col-sm-offset-3">
+							<div class="col-md-5 col-md-offset-1 col-sm-8 col-sm-offset-2">
 								<% evenArr.map(function(item){ %>
 									<div class="park_each">
 										<div><h3><%=item.fullName%></h3></div>
@@ -50,7 +50,7 @@
 					<%} else { %>
 						<% var oddArr = [] %>
 							<% oddArr.push(park[i]) %>
-							<div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3">
+							<div class="col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2">
 								<% oddArr.map(function(item){ %>
 									<div class="park_each">
 											<h3><%=item.fullName%></h3>
