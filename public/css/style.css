@@ -109,6 +109,9 @@ p{
 
 /*homepage
 */
+#ready{
+	margin-top: 55px;
+}
 #search_button{
     background-color: transparent;
     border: solid black;
@@ -137,8 +140,8 @@ p{
 	display: none;
 	margin-top: -220px;
 	border: solid black 3px;
-	width: 320px;
-	height: 120px;
+	width: 350px;
+	height: 130px;
 	background-color: rgb(35, 40, 34);
 	border-radius: 2px;
 }
@@ -368,7 +371,6 @@ footer {
 	text-transform: uppercase;
 	padding: 11px 20px;
 	background-color: rgb(35, 40, 34);
-	font-size: 14px;
 	letter-spacing: .09em;
 	font-weight: 900;
 }
@@ -404,13 +406,31 @@ footer {
 }
 
 @media (max-width: 992px) {
- h1{
-  font-size: 60px;
-  }
-  .body_container {
-    height: 1300px;
-  }
-  .weather_row {
-	margin: 0 16%;
+	h1{
+  		font-size: 50px;
+  	}
+  	.weather_row {
+		margin: 0 16%;
+	}
+	h3.white_text{
+		font-size: 24px;
+	}
+	h3{
+		font-size: 20px;
+	}
+	h4{
+		font-size: 18px;
+	}
+	h4.black_text,.h4-link{
+		font-size: 20px;
+	}
+	#save_button{
+		font-size: 18px;
+	}
+	.copyright,.name,.message{
+		font-size: 8px;
+	}
+	footer{
+		height: 30px;
 	}
 }
