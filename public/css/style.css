@@ -28,6 +28,9 @@
 }
 /*headers
 */
+.col-md-12{
+	padding: 0 !important;
+}
 h1{
 	font-family: 'Poiret One', cursive;
 	font-size: 120px;
@@ -55,7 +58,7 @@ h2.black{
 }
 h3{
 	font-family: 'Raleway', sans-serif;
-	font-size: 28px;
+	font-size: 20px;
 	font-weight: 800;
 	color: rgb(30,30,30);		
 	text-align: center;
@@ -105,6 +108,9 @@ p{
 	color:black;
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
+}
+#top_header{
+	padding: 0;
 }
 
 /*homepage
@@ -165,15 +171,16 @@ p{
 .park_each{	
 	background-image: linear-gradient(bottom, #FFD51A 50%, #FAC815 50%);
 	padding: 3px 18px;
-	margin-bottom: 10px;
+	margin: 10px 20px;
 	height: 360px;
+	overflow: auto;
 	border: solid black 3px;
 	border-radius: 8px;
  }
  .park_each_favs{
 	background-color: white);
 	padding: 3px 18px;
-	margin-bottom: 10px;
+	margin: 10px 20px;
 	height: 220px;
 	border: solid black 3px;
 	border-radius: 8px;
@@ -182,7 +189,7 @@ p{
  	color: black;
 	background-color: white);
 	padding: 3px 18px;
-	margin-bottom: 10px;
+	margin-bottom: 10px 20px;
 	height: 220px;
 	border: dashed black 3px;
 	border-radius: 8px;
@@ -224,7 +231,8 @@ p{
 }
 .location-park{
 	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
+	font-size: 12px;
+	width: auto;
 	font-weight: 800;
 	color: rgb(100,100,100);
 	text-align: center;
