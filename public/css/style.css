@@ -14,17 +14,20 @@
 	top: -10px;
 	width: auto;
 }
-#navbar_text{
+.navbar_text{
 	color: rgb(50,50,50);
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
 }
-#navbar_text:hover{
+.navbar_text:hover{
 	color: rgb(247, 147, 42);
+}
+
+.navbar-collapse{
+	background-color: white;
 }
 .navbar{
 	background-color: white;
-	height: 42px;
 }
 /*headers
 */
@@ -133,8 +136,8 @@ p{
 #search_button_2{
     background-color: transparent;
     border: solid white;
-    font-size: 18px;
-    margin-top: 0px;
+    font-size: 14px;
+    margin-top: 12px;
     font-family: 'Raleway', sans-serif;
     color: white;
 }
@@ -142,9 +145,11 @@ p{
     color: rgb(38, 124, 67);
     background-color: white;
 }
+
 #search_form{
 	display: none;
-	margin-top: -220px;
+	position: relative;
+	bottom: 80px;
 	border: solid black 3px;
 	width: 350px;
 	height: 130px;
@@ -177,6 +182,7 @@ p{
 	border: solid black 3px;
 	border-radius: 8px;
  }
+
  .park_each_favs{
 	background-color: white);
 	padding: 3px 18px;
@@ -323,11 +329,13 @@ p{
 }
 /*weather
 */
-
+.weather_row_divider{
+	height: 3px;
+	background-color: black;
+}
 .weather_row{
 	background-color: white;
 	margin: 0 4%;
-	border-bottom: solid black 2px;	
 }
 .weather_cell{
 	text-align: center;
@@ -351,7 +359,6 @@ p{
 
 .body-section{
 	background-color: white;
-	height: 40vh;
 }
 hr{
 	width: 80%;
@@ -367,17 +374,18 @@ body {
 }
 
 #body {
-   padding-bottom:50px;   /* Height of the footer */
+   padding-bottom:30px;   /* Height of the footer */
 }
 
 /*footer*/
 
 footer {
    	width:100%;
-   	height:50px;  
+   	height:30px;  
 	position:absolute;
+	margin-top: 150px;
 	text-transform: uppercase;
-	padding: 11px 20px;
+	padding: 5px 20px;
 	background-color: rgb(35, 40, 34);
 	letter-spacing: .09em;
 	font-weight: 900;
@@ -412,6 +420,9 @@ footer {
 	color: #F15B31;
 	font-weight: 1000;
 }
+.row{
+	margin: 0 0;
+}
 
 @media (max-width: 992px) {
 	h1{
@@ -441,4 +452,8 @@ footer {
 	footer{
 		height: 30px;
 	}
+	#top_header{
+		font-size: 24px;
+	}
+	
 }

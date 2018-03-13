@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default">
 	<div class="container">
-		<!-- mobile stuff here -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle Navigation</span>
@@ -12,21 +11,20 @@
 		</div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-		<!-- define the links -->
 			<ul class="nav navbar-nav navbar-right">
 				<% if(!currentUser) {%>
 				<li>
-					<a id="navbar_text" href="/auth/login">Login</a>
+					<a class="navbar_text" href="/auth/login">Login</a>
 				</li>
 				<li> 
-					<a id="navbar_text" href="/auth/signup">Sign Up</a>
+					<a class="navbar_text" href="/auth/signup">Sign Up</a>
 				</li>
 				<% } else { %>
 				<li>
-					<a id="navbar_text" href="/favs">Your Saved Parks</a>
+					<a class="navbar_text" href="/favs">Your Saved Parks</a>
 				</li>
 				<li>
-					<a id="navbar_text" href="/auth/logout">Logout</a>
+					<a class="navbar_text" href="/auth/logout">Logout</a>
 				</li>
 				<% } %>
 			</ul>
