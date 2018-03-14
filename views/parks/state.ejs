@@ -19,14 +19,17 @@
 				<p>No Parks in that State</p>
 			<%} else {%>
 				<% for(var i=0; i<park.length; i++) { %>
+					
 					<% if(i % 2 == 0) { %>
 						<% var evenArr = [] %>
 							<% evenArr.push(park[i]) %>
 							<div class="col-md-5 col-md-offset-1 col-sm-8 col-sm-offset-2">
 								<% evenArr.map(function(item){ %>
+									<%var location = item.states.split(',').join(', ')%>
+									<%console.log(location)%>
 									<div class="park_each">
 										<div><h3><%=item.fullName%></h3></div>
-										<p class="location-park">Located in <%=item.states%></p>
+										<p class="location-park">Located in <%=location%></p>
 											<div class="park_text"><p><%=item.description %></p></div>
 											<p style="text-align: center"><a class="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
 										<form method="POST" action="/favs">
@@ -34,7 +37,7 @@
 												<input hidden type="text" name="userId" value="<%= currentUser.id %>">
 							         			<input hidden type="text" name="name" value="<%= item.fullName %>">
 							         			<input hidden type="text" name="designation" value="<%= item.designation %>">
-							         			<input hidden type="text" name="state" value="<%= item.states%>">
+							         			<input hidden type="text" name="state" value="<%= location%>">
 							         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
 							         			<input hidden type="text" name="url" value="<%= item.url %>">
 							         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
@@ -52,9 +55,11 @@
 							<% oddArr.push(park[i]) %>
 							<div class="col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2">
 								<% oddArr.map(function(item){ %>
+									<%var location = item.states.split(',').join(', ')%>
+									<%console.log(location)%>
 									<div class="park_each">
 											<h3><%=item.fullName%></h3>
-											<p class="location-park">Located in <%=item.states%></p>
+											<p class="location-park">Located in <%=location%></p>
 											<div class="park_text"><p ><%=item.description %></p></div>
 											<p style="text-align: center"><a class="park_url" href="<%=item.url%>" target="blank">Vist Park Website</a></p>
 												<form method="POST" action="/favs">
@@ -62,7 +67,7 @@
 														<input hidden type="text" name="userId" value="<%= currentUser.id %>">
 									         			<input hidden type="text" name="name" value="<%= item.fullName %>">
 									         			<input hidden type="text" name="designation" value="<%= item.designation %>">
-									         			<input hidden type="text" name="state" value="<%= item.states%>">
+									         			<input hidden type="text" name="state" value="<%= location%>">
 									         			<input hidden type="text" name="Latlong" value="<%= item.latLong %>">
 									         			<input hidden type="text" name="url" value="<%= item.url %>">
 									         			<input hidden type="text" name="weatherInfo" value="<%= item.weatherInfo %>">
